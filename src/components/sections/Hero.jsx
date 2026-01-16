@@ -41,6 +41,106 @@
 //         </div>
 //       </div>
 //     </section>
+// const Hero = () => {
+//   return (
+//     <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
+//       {/* Background Image with Overlay */}
+//       <div className="absolute inset-0 z-0">
+//         <img 
+//           src={heroImage} 
+//           alt="Beauty Parlor" 
+//           className="w-full h-full object-cover"
+//         />
+//         <div className="absolute inset-0 bg-black/50"></div>
+//       </div>
+      
+//       {/* Content */}
+//       <div className="container mx-auto px-4 z-10 text-center text-white">
+//         <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold mb-6">
+//           Beauty & Wellness <span className="text-primary">Parlor</span>
+//         </h1>
+//         <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">
+//           Experience the ultimate in beauty and relaxation at our luxurious parlor. 
+//           Our expert stylists are dedicated to making you look and feel your best.
+//         </p>
+//         <div className="flex flex-col sm:flex-row justify-center gap-4">
+//           <a 
+//             href="#services" 
+//             className="bg-primary text-white px-8 py-4 rounded-full text-center font-medium hover:bg-primary-dark transition-colors text-lg"
+//           >
+//             Our Services
+//           </a>
+//           <a 
+//             href="#contact" 
+//             className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full text-center font-medium hover:bg-white/10 transition-colors text-lg"
+//           >
+//             Contact Us
+//           </a>
+//         </div>
+//       </div>
+      
+//       {/* Scroll indicator */}
+//       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+//         <div className="w-8 h-12 border-4 border-white rounded-full flex justify-center p-1">
+//           <div className="w-2 h-2 bg-white rounded-full animate-ping"></div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default Hero;
+
+
+
+// src/components/sections/Hero.jsx
+// import heroImage from '../../assets/hero-image.jpg';
+
+// const Hero = () => {
+//   return (
+//     <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
+//       {/* Background Image with Overlay */}
+//       <div className="absolute inset-0 z-0">
+//         <img 
+//           src={heroImage} 
+//           alt="Beauty Parlor" 
+//           className="w-full h-full object-cover"
+//         />
+//         <div className="absolute inset-0 bg-black/50"></div>
+//       </div>
+      
+//       {/* Content */}
+//       <div className="container mx-auto px-4 z-10 text-center text-white">
+//         <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold mb-6">
+//           Beauty & Wellness <span className="text-primary">Parlor</span>
+//         </h1>
+//         <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">
+//           Experience the ultimate in beauty and relaxation at our luxurious parlor. 
+//           Our expert stylists are dedicated to making you look and feel your best.
+//         </p>
+//         <div className="flex flex-col sm:flex-row justify-center gap-4">
+//           <a 
+//             href="#services" 
+//             className="bg-primary text-white px-8 py-4 rounded-full text-center font-medium hover:bg-primary-dark transition-colors text-lg"
+//           >
+//             Our Services
+//           </a>
+//           <a 
+//             href="#contact" 
+//             className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full text-center font-medium hover:bg-white/10 transition-colors text-lg"
+//           >
+//             Contact Us
+//           </a>
+//         </div>
+//       </div>
+      
+//       {/* Scroll indicator */}
+//       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+//         <div className="w-8 h-12 border-4 border-white rounded-full flex justify-center p-1">
+//           <div className="w-2 h-2 bg-white rounded-full animate-ping"></div>
+//         </div>
+//       </div>
+//     </section>
 //   );
 // };
 
@@ -48,45 +148,77 @@
 
 
 // src/components/sections/Hero.jsx
+// import heroImage from '../../assets/hero-image.jpg';
+
+// const Hero = () => {
+//   return (
+//     <section id="home" className="relative h-screen w-full">
+//       {/* Background Image */}
+//       <div className="absolute inset-0">
+//         <img 
+//           src={heroImage} 
+//           alt="Beauty Parlor" 
+//           className="w-full h-full object-cover"
+//         />
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default Hero;
+
+
+
+// import heroImage from '../../assets/hero-image.jpg';
+
+// const Hero = () => {
+//   return (
+//     <section
+//       id="home"
+//       className="relative w-screen h-screen overflow-hidden"
+//     >
+//       {/* Background Image */}
+//       <div className="absolute inset-0">
+//         <img
+//           src={heroImage}
+//           alt="Beauty Parlor"
+//           className="absolute inset-0 w-full h-full object-cover object-center"
+//         />
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default Hero;
+
+
+
+import heroImage from '../../assets/hero-image.jpg';
+
 const Hero = () => {
   return (
-    <section id="home" className="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-r from-primary/5 to-secondary/5">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center">
-          <div className="md:w-1/2 mb-10 md:mb-0">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-dark mb-6">
-              Beauty & Wellness <span className="text-primary">Parlor</span>
-            </h1>
-            <p className="text-lg text-gray-600 mb-8">
-              Experience the ultimate in beauty and relaxation at our luxurious parlor. 
-              Our expert stylists are dedicated to making you look and feel your best.
-            </p>
-            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-              <a 
-                href="#services" 
-                className="bg-primary text-white px-8 py-3 rounded-full text-center font-medium hover:bg-primary-dark transition-colors"
-              >
-                Our Services
-              </a>
-              <a 
-                href="#contact" 
-                className="border-2 border-primary text-primary px-8 py-3 rounded-full text-center font-medium hover:bg-primary/10 transition-colors"
-              >
-                Contact Us
-              </a>
-            </div>
-          </div>
-          <div className="md:w-1/2 flex justify-center">
-            <div className="relative">
-              <div className="w-80 h-80 md:w-96 md:h-96 bg-primary/10 rounded-full flex items-center justify-center">
-                <div className="w-72 h-72 md:w-80 md:h-80 bg-primary/20 rounded-full flex items-center justify-center">
-                  <div className="w-64 h-64 bg-primary/30 rounded-full"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <section
+
+    className="relative w-screen h-screen overflow-hidden">
+  <img
+    src={heroImage}
+    className="absolute inset-0 w-full h-full object-cover"
+  />
+
+  <div className="absolute inset-0 bg-black/40"></div>
+
+  <div className="relative z-10 flex items-center justify-center h-full text-white">
+    <h1 className="text-4xl font-bold"></h1>
+  </div>
+
+      id="home"
+      className="relative w-screen h-screen overflow-hidden"
+    
+      <img
+        src={heroImage}
+        alt="Beauty Parlor"
+        className="absolute inset-0 w-full h-full object-cover object-center"
+      />
     </section>
   );
 };
