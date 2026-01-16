@@ -1,5 +1,6 @@
+// src/components/layout/Navbar.jsx
 import { useState } from 'react';
-import { FiMenu, FiX, FiShoppingBag, FiUser, FiPhone, FiCalendar } from 'react-icons/fi';
+import { FiMenu, FiX, FiPhone, FiCalendar } from 'react-icons/fi';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,15 +15,13 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-black text-whiteshadow-md fixed w-full z-50">
+    <nav className="bg-black shadow-md fixed top-0 left-0 right-0 z-50">
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center">
-            <a href="#" className="text-2xl font-serif font-bold text-white">
-              Beauty<span className="text-secondary">Parlor</span>
-            </a>
-          </div>
+          <a href="#" className="text-2xl font-serif font-bold text-white">
+            Beauty<span className="text-primary">Parlor</span>
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -72,8 +71,8 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden bg-gray-900 py-4 px-4 shadow-lg rounded-lg mt-2">
-            <div className="flex flex-col space-y-4">
+          <div className="md:hidden bg-gray-900 py-2 px-4 shadow-lg rounded-lg mt-2 mb-4">
+            <div className="flex flex-col space-y-3">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
@@ -91,7 +90,7 @@ const Navbar = () => {
                   {link.name}
                 </a>
               ))}
-              <div className="pt-2 border-t border-gray-200">
+              <div className="pt-2 border-t border-gray-700">
                 <button className="w-full flex items-center justify-center space-x-2 bg-primary text-white py-2 px-4 rounded-md hover:bg-primary-dark transition-colors">
                   <FiCalendar className="w-5 h-5" />
                   <span>Book Appointment</span>
