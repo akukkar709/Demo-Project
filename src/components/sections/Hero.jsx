@@ -212,7 +212,7 @@ const Hero = () => {
   </div>
 
       id="home"
-      className="relative w-screen h-screen overflow-hidden"
+      className="relative w-full min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"
     
       <img
         src={heroImage}

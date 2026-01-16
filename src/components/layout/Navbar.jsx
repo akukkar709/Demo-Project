@@ -20,7 +20,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <a href="#" className="text-2xl font-serif font-bold text-white">
-            Beauty<span className="text-primary">Parlor</span>
+            Radiance<span className="text-primary"> Beauty</span>
           </a>
 
           {/* Desktop Navigation */}

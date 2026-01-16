@@ -25,7 +25,7 @@
   body {
     font-family: 'Poppins', sans-serif;
     color: var(--dark);
-    background-color: white;
+    background-color: lab(41.55% 0 -0.01);
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
