@@ -273,7 +273,7 @@ import Navbar from './components/layout/Navbar';
 import Hero from './components/sections/Hero';
 // import Services from './components/sections/Services';
 // import Contact from './components/sections/Contact';
-import Footer from './components/layout/Footer';
+// import Footer from './components/layout/Footer';
 import './App.css';
 
 function App() {
@@ -286,7 +286,7 @@ function App() {
 
         {/* <Contact /> */}
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

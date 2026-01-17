@@ -193,32 +193,164 @@
 
 
 
+// import heroImage from '../../assets/hero-image.jpg';
+
+// const Hero = () => {
+//   return (
+//     <section
+
+//     className="relative w-screen h-screen overflow-hidden">
+//   <img
+//     src={heroImage}
+//     className="absolute inset-0 w-full h-full object-cover"
+//   />
+
+//   <div className="absolute inset-0 bg-black/40"></div>
+
+//   <div className="relative z-10 flex items-center justify-center h-full text-white">
+//     <h1 className="text-4xl font-bold"></h1>
+//   </div>
+
+//       id="home"
+//       className="relative w-full min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"
+    
+//       <img
+//         src={heroImage}
+//         alt="Beauty Parlor"
+//         className="absolute inset-0 w-full h-full object-cover object-center"
+//       />
+//     </section>
+//   );
+// };
+
+// export default Hero;
+
+
+
+// src/components/sections/Hero.jsx
+// import React from 'react';
+// import heroImage from '../../assets/hero-image.jpg';
+
+// const Hero = () => {
+//   return (
+//     <section 
+//       id="home"
+//       className="relative w-full h-screen"
+//     >
+//       {/* Background Image Container */}
+//       <div className="absolute inset-0 w-full h-full">
+//         <img
+//           src={heroImage}
+//           alt="Luxury Beauty Parlor"
+//           className="w-full h-full object-cover"
+//         />
+//         {/* Dark overlay for better text readability */}
+//         <div className="absolute inset-0 bg-black/40"></div>
+//       </div>
+      
+//       {/* Content Container */}
+//       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center text-white px-4">
+//         <h1 className="text-4xl md:text-6xl font-bold mb-4">Welcome to Radiance Beauty</h1>
+//         <p className="text-xl md:text-2xl mb-8 max-w-2xl">Experience luxury beauty treatments in our serene environment</p>
+//         <button className="bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-8 rounded-full transition duration-300">
+//           Book an Appointment
+//         </button>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default Hero;
+
+
+
+// src/components/sections/Hero.jsx
+// import React from 'react';
+// import heroImage from '../../assets/hero-image.jpg';
+
+// const Hero = () => {
+//   return (
+//     <section 
+//       id="home"
+//       className="relative w-full h-screen"
+//     >
+//       {/* Background Image Container */}
+//       <div className="absolute inset-0 w-full h-full">
+//         <img
+//           src={heroImage}
+//           alt="Luxury Beauty Parlor"
+//           className="w-full h-full object-cover"
+//           style={{
+//             minHeight: '100vh',
+//             minWidth: '100vw',
+//             objectPosition: 'center center'
+//           }}
+//         />
+//         {/* Dark overlay for better text readability */}
+//         <div className="absolute inset-0 bg-black/40"></div>
+//       </div>
+      
+//       {/* Content Container - Adjusted for better mobile display */}
+//       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center text-white px-4 sm:px-6">
+//         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4">
+//           Welcome to Radiance Beauty
+//         </h1>
+//         <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 max-w-2xl">
+//           Experience luxury beauty treatments in our serene environment
+//         </p>
+//         <button 
+//           className="bg-primary hover:bg-primary-dark text-white font-semibold py-2 sm:py-3 px-6 sm:px-8 rounded-full transition duration-300 text-sm sm:text-base"
+//           aria-label="Book an appointment"
+//         >
+//           Book an Appointment
+//         </button>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default Hero;
+
+
+// src/components/sections/Hero.jsx
+import React from 'react';
 import heroImage from '../../assets/hero-image.jpg';
 
 const Hero = () => {
   return (
-    <section
-
-    className="relative w-screen h-screen overflow-hidden">
-  <img
-    src={heroImage}
-    className="absolute inset-0 w-full h-full object-cover"
-  />
-
-  <div className="absolute inset-0 bg-black/40"></div>
-
-  <div className="relative z-10 flex items-center justify-center h-full text-white">
-    <h1 className="text-4xl font-bold"></h1>
-  </div>
-
+    <section 
       id="home"
-      className="relative w-full min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"
-    
-      <img
-        src={heroImage}
-        alt="Beauty Parlor"
-        className="absolute inset-0 w-full h-full object-cover object-center"
-      />
+      className="relative w-full h-screen"
+    >
+      {/* Background Image Container */}
+      <div className="absolute inset-0 w-full h-full">
+        <img
+          src={heroImage}
+          alt="Luxury Beauty Parlor"
+          className="w-full h-full object-cover"
+          style={{
+            minHeight: '100vh',
+            minWidth: '100vw',
+            objectPosition: 'center center'
+          }}
+        />
+      </div>
+      
+      {/* Content Container */}
+      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center text-white px-4 sm:px-6">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4">
+          Welcome to Radiance Beauty
+        </h1>
+        <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 max-w-2xl">
+          Experience luxury beauty treatments in our serene environment
+        </p>
+        <button 
+          className="bg-primary hover:bg-primary-dark text-white font-semibold py-2 sm:py-3 px-6 sm:px-8 rounded-full transition duration-300 text-sm sm:text-base"
+          aria-label="Book an appointment"
+        >
+          Book an Appointment
+        </button>
+      </div>
     </section>
   );
 };
