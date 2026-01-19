@@ -313,45 +313,372 @@
 
 
 // src/components/sections/Hero.jsx
-import React from 'react';
+// import React from 'react';
+// import heroImage from '../../assets/hero-image.jpg';
+
+// const Hero = () => {
+//   return (
+//     <section 
+//       id="home"
+//       className="relative w-full h-screen"
+//     >
+//       {/* Background Image Container */}
+//       <div className="absolute inset-0 w-full h-full">
+//         <img
+//           src={heroImage}
+//           alt="Luxury Beauty Parlor"
+//           className="w-full h-full object-cover"
+//           style={{
+//             minHeight: '100vh',
+//             minWidth: '100vw',
+//             objectPosition: 'center center'
+//           }}
+//         />
+//       </div>
+      
+//       {/* Content Container */}
+//       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center text-white px-4 sm:px-6">
+//         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4">
+//           Welcome to Radiance Beauty
+//         </h1>
+//         <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 max-w-2xl">
+//           Experience luxury beauty treatments in our serene environment
+//         </p>
+//         <button 
+//           className="bg-primary hover:bg-primary-dark text-white font-semibold py-2 sm:py-3 px-6 sm:px-8 rounded-full transition duration-300 text-sm sm:text-base"
+//           aria-label="Book an appointment"
+//         >
+//           Book an Appointment
+//         </button>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default Hero;
+
+
+
+// src/components/sections/Hero.jsx
+// import React from 'react';
+// import heroImage from '../../assets/hero-image.jpg';
+
+// const Hero = () => {
+//   return (
+//     <section 
+//       id="home"
+//       className="relative w-full h-screen flex items-center justify-center"
+//     >
+//       {/* Background Image */}
+//       <div className="absolute inset-0 w-full h-full">
+//         <img
+//           src={heroImage}
+//           alt="Radiance Beauty Parlor"
+//           className="w-full h-full object-cover"
+//           style={{
+//             minHeight: '100vh',
+//             minWidth: '100vw',
+//             objectPosition: 'center center'
+//           }}
+//         />
+//       </div>
+      
+//       {/* Only the title centered */}
+//       <div className="relative z-10">
+//         <h1 className="text-5xl md:text-7xl font-bold text-white">
+//           Radiance Beauty
+//         </h1>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default Hero;
+
+
+
+// src/components/sections/Hero.jsx
+// import React, { useState, useEffect } from 'react';
+// import heroImage from '../../assets/hero-image.jpg';
+
+// const Hero = () => {
+//   const [text, setText] = useState('');
+//   const fullText = "Radiance Beauty";
+//   const [charIndex, setCharIndex] = useState(0);
+
+//   useEffect(() => {
+//     if (charIndex < fullText.length) {
+//       const timeout = setTimeout(() => {
+//         setText(prevText => prevText + fullText[charIndex]);
+//         setCharIndex(prevIndex => prevIndex + 1);
+//       }, 150); // Adjust typing speed here (milliseconds)
+
+//       return () => clearTimeout(timeout);
+//     }
+//   }, [charIndex, fullText]);
+
+//   return (
+//     <section 
+//       id="home"
+//       className="relative w-full h-screen flex items-center justify-center"
+//     >
+//       {/* Background Image */}
+//       <div className="absolute inset-0 w-full h-full">
+//         <img
+//           src={heroImage}
+//           alt="Radiance Beauty Parlor"
+//           className="w-full h-full object-cover"
+//           style={{
+//             minHeight: '100vh',
+//             minWidth: '100vw',
+//             objectPosition: 'center center'
+//           }}
+//         />
+//       </div>
+      
+//       {/* Animated Text */}
+//       <div className="relative z-10">
+//         <h1 
+//           className="text-5xl md:text-7xl font-bold text-white border-r-2 border-white pr-2"
+//           style={{ 
+//             whiteSpace: 'nowrap',
+//             overflow: 'hidden',
+//             animation: 'blink 0.75s step-end infinite',
+//             textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'
+//           }}
+//         >
+//           {text}
+//         </h1>
+//       </div>
+
+//       {/* Add the blinking cursor animation to your CSS */}
+//       <style jsx>{`
+//         @keyframes blink {
+//           from, to { border-color: transparent }
+//           50% { border-color: white; }
+//         }
+//       `}</style>
+//     </section>
+//   );
+// };
+
+// export default Hero;
+
+
+// src/components/sections/Hero.jsx
+// import React, { useState, useEffect } from 'react';
+// import heroImage from '../../assets/hero-image.jpg';
+
+// const Hero = () => {
+//   const [text, setText] = useState('');
+//   const fullText = "Radiance Beauty";
+//   const [charIndex, setCharIndex] = useState(0);
+
+//   useEffect(() => {
+//     if (charIndex < fullText.length) {
+//       const timeout = setTimeout(() => {
+//         setText(prevText => prevText + fullText[charIndex]);
+//         setCharIndex(prevIndex => prevIndex + 1);
+//       }, 150); // Adjust typing speed here (milliseconds)
+
+//       return () => clearTimeout(timeout);
+//     }
+//   }, [charIndex, fullText]);
+
+//   return (
+//     <section 
+//       id="home"
+//       className="relative w-full h-screen flex items-center justify-center"
+//     >
+//       {/* Background Image */}
+//       <div className="absolute inset-0 w-full h-full">
+//         <img
+//           src={heroImage}
+//           alt="Radiance Beauty Parlor"
+//           className="w-full h-full object-cover"
+//           style={{
+//             minHeight: '100vh',
+//             minWidth: '100vw',
+//             objectPosition: 'center center'
+//           }}
+//         />
+//       </div>
+      
+//       {/* Animated Text */}
+//       <div className="relative z-10">
+//         <h1 
+//           className="text-5xl md:text-7xl font-bold text-black border-r-2 border-black pr-2"
+//           style={{ 
+//             whiteSpace: 'nowrap',
+//             overflow: 'hidden',
+//             animation: 'blink 0.75s step-end infinite',
+//             textShadow: '1px 1px 2px rgba(255, 255, 255, 0.8)'
+//           }}
+//         >
+//           {text}
+//         </h1>
+//       </div>
+
+//       {/* Blinking cursor animation */}
+//       <style jsx>{`
+//         @keyframes blink {
+//           from, to { border-color: transparent }
+//           50% { border-color: black; }
+//         }
+//       `}</style>
+//     </section>
+//   );
+// };
+
+// export default Hero;
+
+
+
+
+// src/components/sections/Hero.jsx
+import React, { useState, useEffect } from 'react';
 import heroImage from '../../assets/hero-image.jpg';
+import { FiArrowRight } from 'react-icons/fi';
 
 const Hero = () => {
+  const [text, setText] = useState('');
+  const fullText = "Radiance Beauty";
+  const [charIndex, setCharIndex] = useState(0);
+
+  useEffect(() => {
+    if (charIndex < fullText.length) {
+      const timeout = setTimeout(() => {
+        setText(prevText => prevText + fullText[charIndex]);
+        setCharIndex(prevIndex => prevIndex + 1);
+      }, 150);
+      return () => clearTimeout(timeout);
+    }
+  }, [charIndex, fullText]);
+
+  // Sample gallery images (replace with your actual images)
+  const galleryImages = [
+     { 
+    id: 1, 
+    src: '/gallery/haircut-image.jpg', 
+    alt: 'Modern Haircut',
+    title: 'Precision Haircuts',
+    description: 'Expertly crafted styles for every hair type'
+  },
+  { 
+    id: 2, 
+    src: '/gallery/1-image.jpg', 
+    alt: 'Vibrant Hair Color',
+    title: 'Vibrant Colors',
+    description: 'Transform your look with our coloring techniques'
+  },
+  { 
+    id: 3, 
+    src: '/gallery/2-image.jpg', 
+    alt: 'Elegant Styling',
+    title: 'Elegant Styling',
+    description: 'Perfect for special occasions'
+  },
+  { 
+    id: 4, 
+    src: '/gallery/2-image.jpg', 
+    alt: 'Beard Grooming',
+    title: 'Beard Care',
+    description: 'Professional grooming services'
+  },
+  { 
+    id: 5, 
+    src: '/gallery/5.jpg', 
+    alt: 'Professional Makeup',
+    title: 'Makeup Artistry',
+    description: 'Enhance your natural beauty'
+  },
+  { 
+    id: 6, 
+    src: '/gallery/6.jpg', 
+    alt: 'Luxury Spa',
+    title: 'Spa Treatments',
+    description: 'Relax and rejuvenate'
+  },
+];
+
   return (
-    <section 
-      id="home"
-      className="relative w-full h-screen"
-    >
-      {/* Background Image Container */}
-      <div className="absolute inset-0 w-full h-full">
-        <img
-          src={heroImage}
-          alt="Luxury Beauty Parlor"
-          className="w-full h-full object-cover"
-          style={{
-            minHeight: '100vh',
-            minWidth: '100vw',
-            objectPosition: 'center center'
-          }}
-        />
-      </div>
-      
-      {/* Content Container */}
-      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center text-white px-4 sm:px-6">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4">
-          Welcome to Radiance Beauty
-        </h1>
-        <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 max-w-2xl">
-          Experience luxury beauty treatments in our serene environment
-        </p>
-        <button 
-          className="bg-primary hover:bg-primary-dark text-white font-semibold py-2 sm:py-3 px-6 sm:px-8 rounded-full transition duration-300 text-sm sm:text-base"
-          aria-label="Book an appointment"
-        >
-          Book an Appointment
-        </button>
-      </div>
-    </section>
+    <div>
+      {/* Hero Section */}
+      <section 
+        id="home"
+        className="relative w-full h-screen flex flex-col items-center justify-center"
+      >
+        {/* Background Image */}
+        <div className="absolute inset-0 w-full h-full">
+          <img
+            src={heroImage}
+            alt="Radiance Beauty Parlor"
+            className="w-full h-full object-cover"
+            style={{
+              minHeight: '100vh',
+              minWidth: '100vw',
+              objectPosition: 'center center'
+            }}
+          />
+        </div>
+        
+        {/* Main Title */}
+        <div className="relative z-10 text-center mb-8">
+          <h1 
+            className="text-5xl md:text-7xl font-bold text-black mb-8"
+            style={{ 
+              textShadow: '1px 1px 2px rgba(255, 255, 255, 0.8)'
+            }}
+          >
+            {text}
+          </h1>
+        </div>
+
+        {/* LOOKS IN VOGUE Banner */}
+        {/* <div className="relative z-10 bg-black bg-opacity-80 text-white py-6 px-8 rounded-lg text-center">
+          <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4 tracking-wider">
+            LOOKS IN VOGUE
+          </h2>
+          <button className="bg-amber-500 hover:bg-amber-600 text-black font-semibold py-3 px-8 rounded-full transition duration-300 flex items-center mx-auto">
+            View Collection <FiArrowRight className="ml-2" />
+          </button>
+        </div> */}
+      </section>
+
+      {/* 3x2 Gallery Grid */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-center mb-12 text-gray-800">
+            Our Signature Styles
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {galleryImages.map((image) => (
+              <div 
+                key={image.id} 
+                className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300"
+              >
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
+                  <span className="text-white opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 font-medium text-lg">
+                    {image.alt}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+
+
+
+
   );
 };
 
