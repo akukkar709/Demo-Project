@@ -580,7 +580,7 @@ const Hero = () => {
   },
   { 
     id: 4, 
-    src: '/gallery/2-image.jpg', 
+    src: '/gallery/4.jpg', 
     alt: 'Beard Grooming',
     title: 'Beard Care',
     description: 'Professional grooming services'
@@ -645,8 +645,9 @@ const Hero = () => {
         </div> */}
       </section>
 
+
       {/* 3x2 Gallery Grid */}
-      <section className="py-16 bg-gray-50">
+      {/* <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-center mb-12 text-gray-800">
             Our Signature Styles
@@ -671,7 +672,35 @@ const Hero = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+
+
+    {/* 3x2 Gallery Grid */}
+<section className="w-full bg-gray-50">
+  <div className="container mx-auto px-4 py-16">
+    <h2 className="text-3xl md:text-4xl font-serif font-bold text-center mb-12 text-gray-800">
+      Our Signature Styles
+    </h2>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {galleryImages.map((image) => (
+        <div 
+          key={image.id} 
+          className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 aspect-[3/4]"
+        >
+          <img
+            src={image.src}
+            alt={image.alt}
+            className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+            <h3 className="text-white text-xl font-bold mb-1">{image.title}</h3>
+            <p className="text-gray-200 text-sm">{image.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
     </div>
 
 
