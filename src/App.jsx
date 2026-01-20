@@ -271,6 +271,7 @@
 import { useState } from 'react';
 import Navbar from './components/layout/Navbar';
 import Hero from './components/sections/Hero';
+import Gallery from './components/sections/Gallery';
 // import Services from './components/sections/Services';
 // import Contact from './components/sections/Contact';
 // import Footer from './components/layout/Footer';
@@ -285,6 +286,7 @@ function App() {
         {/* <Services /> */}
 
         {/* <Contact /> */}
+        <Gallery />
       </main>
       {/* <Footer /> */}
     </div>

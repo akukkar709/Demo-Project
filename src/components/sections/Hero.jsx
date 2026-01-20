@@ -536,103 +536,103 @@
 
 
 // src/components/sections/Hero.jsx
-import React, { useState, useEffect } from 'react';
-import heroImage from '../../assets/hero-image.jpg';
-import { FiArrowRight } from 'react-icons/fi';
+// import React, { useState, useEffect } from 'react';
+// import heroImage from '../../assets/hero-image.jpg';
+// import { FiArrowRight } from 'react-icons/fi';
 
-const Hero = () => {
-  const [text, setText] = useState('');
-  const fullText = "Radiance Beauty";
-  const [charIndex, setCharIndex] = useState(0);
+// const Hero = () => {
+//   const [text, setText] = useState('');
+//   const fullText = "Radiance Beauty";
+//   const [charIndex, setCharIndex] = useState(0);
 
-  useEffect(() => {
-    if (charIndex < fullText.length) {
-      const timeout = setTimeout(() => {
-        setText(prevText => prevText + fullText[charIndex]);
-        setCharIndex(prevIndex => prevIndex + 1);
-      }, 150);
-      return () => clearTimeout(timeout);
-    }
-  }, [charIndex, fullText]);
+//   useEffect(() => {
+//     if (charIndex < fullText.length) {
+//       const timeout = setTimeout(() => {
+//         setText(prevText => prevText + fullText[charIndex]);
+//         setCharIndex(prevIndex => prevIndex + 1);
+//       }, 150);
+//       return () => clearTimeout(timeout);
+//     }
+//   }, [charIndex, fullText]);
 
-  // Sample gallery images (replace with your actual images)
-  const galleryImages = [
-     { 
-    id: 1, 
-    src: '/gallery/haircut-image.jpg', 
-    alt: 'Modern Haircut',
-    title: 'Precision Haircuts',
-    description: 'Expertly crafted styles for every hair type'
-  },
-  { 
-    id: 2, 
-    src: '/gallery/1-image.jpg', 
-    alt: 'Vibrant Hair Color',
-    title: 'Vibrant Colors',
-    description: 'Transform your look with our coloring techniques'
-  },
-  { 
-    id: 3, 
-    src: '/gallery/2-image.jpg', 
-    alt: 'Elegant Styling',
-    title: 'Elegant Styling',
-    description: 'Perfect for special occasions'
-  },
-  { 
-    id: 4, 
-    src: '/gallery/4.jpg', 
-    alt: 'Beard Grooming',
-    title: 'Beard Care',
-    description: 'Professional grooming services'
-  },
-  { 
-    id: 5, 
-    src: '/gallery/5.jpg', 
-    alt: 'Professional Makeup',
-    title: 'Makeup Artistry',
-    description: 'Enhance your natural beauty'
-  },
-  { 
-    id: 6, 
-    src: '/gallery/6.jpg', 
-    alt: 'Luxury Spa',
-    title: 'Spa Treatments',
-    description: 'Relax and rejuvenate'
-  },
-];
+//   // Sample gallery images (replace with your actual images)
+//   const galleryImages = [
+//      { 
+//     id: 1, 
+//     src: '/gallery/haircut-image.jpg', 
+//     alt: 'Modern Haircut',
+//     title: 'Precision Haircuts',
+//     description: 'Expertly crafted styles for every hair type'
+//   },
+//   { 
+//     id: 2, 
+//     src: '/gallery/1-image.jpg', 
+//     alt: 'Vibrant Hair Color',
+//     title: 'Vibrant Colors',
+//     description: 'Transform your look with our coloring techniques'
+//   },
+//   { 
+//     id: 3, 
+//     src: '/gallery/2-image.jpg', 
+//     alt: 'Elegant Styling',
+//     title: 'Elegant Styling',
+//     description: 'Perfect for special occasions'
+//   },
+//   { 
+//     id: 4, 
+//     src: '/gallery/4.jpg', 
+//     alt: 'Beard Grooming',
+//     title: 'Beard Care',
+//     description: 'Professional grooming services'
+//   },
+//   { 
+//     id: 5, 
+//     src: '/gallery/5.jpg', 
+//     alt: 'Professional Makeup',
+//     title: 'Makeup Artistry',
+//     description: 'Enhance your natural beauty'
+//   },
+//   { 
+//     id: 6, 
+//     src: '/gallery/6.jpg', 
+//     alt: 'Luxury Spa',
+//     title: 'Spa Treatments',
+//     description: 'Relax and rejuvenate'
+//   },
+// ];
 
-  return (
-    <div>
-      {/* Hero Section */}
-      <section 
-        id="home"
-        className="relative w-full h-screen flex flex-col items-center justify-center"
-      >
-        {/* Background Image */}
-        <div className="absolute inset-0 w-full h-full">
-          <img
-            src={heroImage}
-            alt="Radiance Beauty Parlor"
-            className="w-full h-full object-cover"
-            style={{
-              minHeight: '100vh',
-              minWidth: '100vw',
-              objectPosition: 'center center'
-            }}
-          />
-        </div>
+//   return (
+//     <div>
+//       {/* Hero Section */}
+//       <section 
+//         id="home"
+//         className="relative w-full h-screen flex flex-col items-center justify-center"
+//       >
+//         {/* Background Image */}
+//         <div className="absolute inset-0 w-full h-full">
+//           <img
+//             src={heroImage}
+//             alt="Radiance Beauty Parlor"
+//             className="w-full h-full object-cover"
+//             style={{
+//               minHeight: '100vh',
+//               minWidth: '100vw',
+//               objectPosition: 'center center'
+//             }}
+//           />
+//         </div>
         
-        {/* Main Title */}
-        <div className="relative z-10 text-center mb-8">
-          <h1 
-            className="text-5xl md:text-7xl font-bold text-black mb-8"
-            style={{ 
-              textShadow: '1px 1px 2px rgba(255, 255, 255, 0.8)'
-            }}
-          >
-            {text}
-          </h1>
-        </div>
+//         {/* Main Title */}
+//         <div className="relative z-10 text-center mb-8">
+//           <h1 
+//             className="text-5xl md:text-7xl font-bold text-black mb-8"
+//             style={{ 
+//               textShadow: '1px 1px 2px rgba(255, 255, 255, 0.8)'
+//             }}
+//           >
+//             {text}
+//           </h1>
+//         </div>
 
         {/* LOOKS IN VOGUE Banner */}
         {/* <div className="relative z-10 bg-black bg-opacity-80 text-white py-6 px-8 rounded-lg text-center">
@@ -643,7 +643,7 @@ const Hero = () => {
             View Collection <FiArrowRight className="ml-2" />
           </button>
         </div> */}
-      </section>
+      // </section>
 
 
       {/* 3x2 Gallery Grid */}
@@ -676,7 +676,7 @@ const Hero = () => {
 
 
     {/* 3x2 Gallery Grid */}
-<section className="w-full bg-gray-50">
+{/* <section className="w-full bg-gray-50">
   <div className="container mx-auto px-4 py-16">
     <h2 className="text-3xl md:text-4xl font-serif font-bold text-center mb-12 text-gray-800">
       Our Signature Styles
@@ -700,14 +700,263 @@ const Hero = () => {
       ))}
     </div>
   </div>
+
+</section> */}
+
+
+
+{/* 3x2 Gallery Grid */}
+{/* <section className="w-full bg-gray-50 py-16">
+  <div className="w-full px-4">
+    <h2 className="text-3xl md:text-4xl font-serif font-bold text-center mb-12 text-gray-800">
+      Our Signature Styles
+    </h2>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full max-w-[1400px] mx-auto gap-6 px-4">
+      {galleryImages.map((image) => (
+        <div 
+          key={image.id} 
+          className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 aspect-[3/4] w-full"
+        >
+          <img
+            src={image.src}
+            alt={image.alt}
+            className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+            <h3 className="text-white text-xl font-bold mb-1">{image.title}</h3>
+            <p className="text-gray-200 text-sm">{image.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
 </section>
     </div>
 
+  );
+};
+
+export default Hero; */}
+
+
+
+// import React, { useState, useEffect } from 'react';
+// import heroImage from '../../assets/hero-image.jpg';
+// import { FiArrowRight } from 'react-icons/fi';
+
+// const Hero = () => {
+//   const [text, setText] = useState('');
+//   const fullText = "Radiance Beauty";
+//   const [charIndex, setCharIndex] = useState(0);
+
+//   useEffect(() => {
+//     if (charIndex < fullText.length) {
+//       const timeout = setTimeout(() => {
+//         setText(prevText => prevText + fullText[charIndex]);
+//         setCharIndex(prevIndex => prevIndex + 1);
+//       }, 150);
+//       return () => clearTimeout(timeout);
+//     }
+//   }, [charIndex, fullText]);
+
+//   const galleryImages = [
+//     { 
+//       id: 1, 
+//       src: '/gallery/haircut-image.jpg', 
+//       alt: 'Modern Haircut',
+//       title: 'Precision Haircuts',
+//       description: 'Expertly crafted styles for every hair type'
+//     },
+//     { 
+//       id: 2, 
+//       src: '/gallery/1-image.jpg', 
+//       alt: 'Vibrant Hair Color',
+//       title: 'Vibrant Colors',
+//       description: 'Transform your look with our coloring techniques'
+//     },
+//     { 
+//       id: 3, 
+//       src: '/gallery/2-image.jpg', 
+//       alt: 'Elegant Styling',
+//       title: 'Elegant Styling',
+//       description: 'Perfect for special occasions'
+//     },
+//     { 
+//       id: 4, 
+//       src: '/gallery/4.jpg', 
+//       alt: 'Beard Grooming',
+//       title: 'Beard Care',
+//       description: 'Professional grooming services'
+//     },
+//     { 
+//       id: 5, 
+//       src: '/gallery/5.jpg', 
+//       alt: 'Professional Makeup',
+//       title: 'Makeup Artistry',
+//       description: 'Enhance your natural beauty'
+//     },
+//     { 
+//       id: 6, 
+//       src: '/gallery/6.jpg', 
+//       alt: 'Luxury Spa',
+//       title: 'Spa Treatments',
+//       description: 'Relax and rejuvenate'
+//     },
+//   ];
+
+//   return (
+//     <div className="w-full">
+//       {/* Hero Section */}
+//       <section 
+//         id="home"
+//         className="relative w-full h-screen flex flex-col items-center justify-center"
+//       >
+//         {/* Background Image */}
+//         <div className="absolute inset-0 w-full h-full">
+//           <img
+//             src={heroImage}
+//             alt="Radiance Beauty Parlor"
+//             className="w-full h-full object-cover"
+//             style={{
+//               minHeight: '100vh',
+//               minWidth: '100vw',
+//               objectPosition: 'center center'
+//             }}
+//           />
+//         </div>
+        
+//         {/* Main Title */}
+//         <div className="relative z-10 text-center">
+//           <h1 
+//             className="text-5xl md:text-7xl font-bold text-black"
+//             style={{ 
+//               textShadow: '1px 1px 2px rgba(255, 255, 255, 0.8)'
+//             }}
+//           >
+//             {text}
+//           </h1>
+//         </div>
+//       </section>
+
+//       {/* Gallery Section - Full Width */}
+//       {/* <section className="w-full bg-gray-50 py-16">
+//         <div className="w-full max-w-[1400px] mx-auto px-4">
+//           <h2 className="text-3xl md:text-4xl font-serif font-bold text-center mb-12 text-gray-800">
+//             Our Signature Styles
+//           </h2>
+//           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+//             {galleryImages.map((image) => (
+//               <div 
+//                 key={image.id} 
+//                 className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 aspect-[3/4] w-full"
+//               >
+//                 <img
+//                   src={image.src}
+//                   alt={image.alt}
+//                   className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+//                 />
+//                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+//                   <h3 className="text-white text-xl font-bold mb-1">{image.title}</h3>
+//                   <p className="text-gray-200 text-sm">{image.description}</p>
+//                 </div>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       </section> */}
+
+
+
+//       <section className="w-full bg-gray-50 py-16">
+//   <div className="w-full px-6 md:px-12">
+    
+//     <h2 className="text-3xl md:text-4xl font-serif font-bold text-center mb-12 text-gray-800">
+//       Our Signature Styles
+//     </h2>
+
+//     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+//       {galleryImages.map((image) => (
+//         <div
+//           key={image.id}
+//           className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 aspect-[3/4]"
+//         >
+//           <img
+//             src={image.src}
+//             alt={image.alt}
+//             className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+//           />
+
+//           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+//             <h3 className="text-white text-xl font-semibold">{image.title}</h3>
+//             <p className="text-gray-200 text-sm">{image.description}</p>
+//           </div>
+//         </div>
+//       ))}
+//     </div>
+
+//   </div>
+// </section>
+
+//     </div>
+//   );
+// };
+
+// export default Hero;
 
 
 
 
 
+// src/components/sections/Hero.jsx
+import React, { useState, useEffect } from 'react';
+import heroImage from '../../assets/hero-image.jpg';
+
+const Hero = () => {
+  const [text, setText] = useState('');
+  const fullText = "Radiance Beauty";
+  const [charIndex, setCharIndex] = useState(0);
+
+  useEffect(() => {
+    if (charIndex < fullText.length) {
+      const timeout = setTimeout(() => {
+        setText(prevText => prevText + fullText[charIndex]);
+        setCharIndex(prevIndex => prevIndex + 1);
+      }, 150);
+      return () => clearTimeout(timeout);
+    }
+  }, [charIndex, fullText]);
+
+  return (
+    <div className="w-full">
+      <section 
+        id="home"
+        className="relative w-full h-screen flex flex-col items-center justify-center"
+      >
+        <div className="absolute inset-0 w-full h-full">
+          <img
+            src={heroImage}
+            alt="Radiance Beauty Parlor"
+            className="w-full h-full object-cover"
+            style={{
+              minHeight: '100vh',
+              minWidth: '100vw',
+              objectPosition: 'center center'
+            }}
+          />
+        </div>
+        
+        <div className="relative z-10 text-center">
+          <h1 
+            className="text-5xl md:text-7xl font-bold text-black"
+            style={{ 
+              textShadow: '1px 1px 2px rgba(255, 255, 255, 0.8)'
+            }}
+          >
+            {text}
+          </h1>
+        </div>
+      </section>
+    </div>
   );
 };
 
