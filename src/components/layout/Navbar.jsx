@@ -50,7 +50,7 @@ const Navbar = () => {
               <FiCalendar className="w-5 h-5" />
               <span>Book Appointment</span>
               </Link>
-              
+
            
             <a 
               href="tel:+1234567890" 
@@ -76,18 +76,28 @@ const Navbar = () => {
           </div>
         </div>
 
+
+
+
+
+
+
+
+
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden bg-gray-900 py-2 px-4 shadow-lg rounded-lg mt-2 mb-4">
-            <div className="flex flex-col space-y-3">
+          <div className="md:hidden absolute top-16 left-0 right-0 bg-white shadow-lg z-50">
+            <div className="spx-4 pt-2 pb-4 pace-y-2">
               {navLinks.map((link) => (
                 <a
-                  key={link.name}
+                  key={link.id}
                   href={link.href}
-                  className={`block py-2 px-4 rounded-md ${
-                    activeLink === link.name.toLowerCase()
-                      ? 'bg-primary text-white'
-                      : 'text-white hover:bg-gray-800'
+                  className={`block px-3 py-2 rounded-md text-base font-medium ${
+                    activeLink === link.id
+
+                      ? 'text-primary'
+              : 'text-gray-700 hover:text-primary'
+
                   }`}
                   onClick={() => {
                     setActiveLink(link.name.toLowerCase());
@@ -97,11 +107,19 @@ const Navbar = () => {
                   {link.name}
                 </a>
               ))}
-              <div className="pt-2 border-t border-gray-700">
-                <button className="w-full flex items-center justify-center space-x-2 bg-primary text-white py-2 px-4 rounded-md hover:bg-primary-dark transition-colors">
+              <div className="pt-4 border-t border-gray-200 mt-2">
+                <Link
+                          to="/appointment"
+                          className="block w-full text-center bg-primary text-white px-4 py-2 rounded-full hover:bg-primary-dark transition-colors"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          Book Appointment
+                        </Link>
+                {/* <button className="w-full flex items-center justify-center space-x-2 bg-primary text-white py-2 px-4 rounded-md hover:bg-primary-dark transition-colors">
                   <FiCalendar className="w-5 h-5" />
                   <span>Book Appointment</span>
-                </button>
+                </button> */}
+
               </div>
             </div>
           </div>

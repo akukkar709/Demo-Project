@@ -31,7 +31,17 @@ const Appointment = () => {
   };
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gray-50"
+     style={{ 
+        width: '100vw',
+        position: 'relative',
+        left: '65%',
+        right: '50%',
+        marginLeft: '-50vw',
+        marginRight: '-50vw'
+      }}
+    
+    >
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
           <div className="p-8">
