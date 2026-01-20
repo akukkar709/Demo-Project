@@ -267,28 +267,70 @@
 
 
 
-// src/App.jsx
-import { useState } from 'react';
+// // src/App.jsx
+// import { useState } from 'react';
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+// import Navbar from './components/layout/Navbar';
+// import Hero from './components/sections/Hero';
+// import Gallery from './components/sections/Gallery';
+// import Appointment from './components/sections/Appointment'
+// // import Services from './components/sections/Services';
+// // import Contact from './components/sections/Contact';
+// // import Footer from './components/layout/Footer';
+// import './App.css';
+
+// function App() {
+//   return (
+//     <Router>
+//     <div className="min-h-screen bg-white">
+//       <Navbar />
+//       <Routes>
+//           <Route path="/" element={
+//       <main>
+//         <Hero />
+//         <Gallery />
+//       </main>
+//           } />
+//         <Route path="/appointment" element={<Appointment />} />
+//         </Routes>
+
+      
+//     </div>
+//     </Router>
+
+//   );
+// }
+
+
+
+
 import Navbar from './components/layout/Navbar';
 import Hero from './components/sections/Hero';
 import Gallery from './components/sections/Gallery';
-// import Services from './components/sections/Services';
-// import Contact from './components/sections/Contact';
-// import Footer from './components/layout/Footer';
+import Appointment from './components/sections/Appointment';
+import { Routes, Route } from 'react-router-dom';
+
 import './App.css';
 
 function App() {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      <main>
-        <Hero />
-        {/* <Services /> */}
 
-        {/* <Contact /> */}
-        <Gallery />
-      </main>
-      {/* <Footer /> */}
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <main>
+              <Hero />
+              <Gallery />
+            </main>
+          }
+        />
+
+        <Route path="/appointment" element={<Appointment />} />
+      </Routes>
     </div>
   );
 }

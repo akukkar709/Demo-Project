@@ -128,8 +128,6 @@ const Gallery = () => {
       </div>
     </div>
 
-
-
     </section>
   );
 };

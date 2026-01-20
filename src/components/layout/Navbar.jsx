@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import { FiMenu, FiX, FiPhone, FiCalendar } from 'react-icons/fi';
 
+import { Link } from 'react-router-dom';
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('home');
@@ -41,10 +43,15 @@ const Navbar = () => {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <button className="flex items-center space-x-2 text-white hover:text-primary transition-colors">
+              <Link 
+    to="/appointment" 
+    className="flex items-center space-x-2 text-white hover:text-primary transition-colors"
+  >
               <FiCalendar className="w-5 h-5" />
-              <span>Book Now</span>
-            </button>
+              <span>Book Appointment</span>
+              </Link>
+              
+           
             <a 
               href="tel:+1234567890" 
               className="bg-primary text-white px-4 py-2 rounded-full flex items-center space-x-2 hover:bg-primary-dark transition-colors"
