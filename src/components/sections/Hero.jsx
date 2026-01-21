@@ -913,7 +913,7 @@ import heroImage from '../../assets/hero-image.jpg';
 
 const Hero = () => {
   const [text, setText] = useState('');
-  const fullText = "Radiance Beauty";
+  const fullText = "AURORA BEAUTY";
   const [charIndex, setCharIndex] = useState(0);
 
   useEffect(() => {
@@ -935,7 +935,7 @@ const Hero = () => {
         <div className="absolute inset-0 w-full h-full">
           <img
             src={heroImage}
-            alt="Radiance Beauty Parlor"
+            alt="AURORA BEAUTY"
             className="w-full h-full object-cover"
             style={{
               minHeight: '100vh',

@@ -22,7 +22,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <a href="#" className="text-2xl font-serif font-bold text-white">
-            Radiance Beauty<span className="text-primary"></span>
+            AURORA BEAUTY<span className="text-primary"></span>
           </a>
 
           {/* Desktop Navigation */}
