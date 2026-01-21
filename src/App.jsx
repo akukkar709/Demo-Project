@@ -317,7 +317,6 @@ function App() {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-
       <Routes>
         <Route
           path="/"
@@ -328,7 +327,6 @@ function App() {
             </main>
           }
         />
-
         <Route path="/appointment" element={<Appointment />} />
       </Routes>
     </div>

@@ -1019,9 +1019,7 @@ const Hero = () => {
   }, [currentSlide]);
 
   return (
-       
     <section className="relative w-full h-screen overflow-hidden"
-    
      style={{ 
         width: '100vw',
         position: 'relative',
@@ -1030,6 +1028,7 @@ const Hero = () => {
         marginLeft: '-50vw',
         marginRight: '-50vw'
       }}
+    
     
     >
       {/* Slides */}
