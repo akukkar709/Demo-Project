@@ -1,6 +1,7 @@
 // src/components/sections/Appointment.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { FiCheckCircle } from 'react-icons/fi';
 
 const Appointment = () => {
   const navigate = useNavigate();
@@ -17,26 +18,22 @@ const Appointment = () => {
     message: ''
   });
 
+   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: value
+      [name]: value 
     }));
   };
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   // Here you would typically send the data to your backend
-  //   console.log('Appointment booked:', formData);
-  //   alert('Appointment booked successfully!');
-  //   navigate('/');
-  // };
 
 
   // In your Appointment.jsx
 const handleSubmit = async (e) => {
   e.preventDefault();
+  setIsSubmitting(true);
   try {
     const response = await fetch('http://localhost:5000/api/appointment', {
       method: 'POST',
@@ -48,7 +45,7 @@ const handleSubmit = async (e) => {
 
     const data = await response.json();
     if (data.success) {
-      alert('Appointment requested successfully! We will contact you soon.');
+      setShowSuccess(true);
       // Reset form or redirect
       setFormData({
         name: '',
@@ -71,7 +68,11 @@ const handleSubmit = async (e) => {
     console.error('Error:', error);
     alert('Failed to send appointment. Please try again later.');
   }
+  finally {
+      setIsSubmitting(false);
+  }
 };
+
 
   return (
     <section className="py-20 bg-gray-50"
@@ -193,7 +194,6 @@ const handleSubmit = async (e) => {
       <option value="">Select Gender</option>
       <option value="ladies">Ladies</option>
       <option value="gents">Gents</option>
-      <option value="other">Prefer not to say</option>
     </select>
   </div>
 
@@ -236,8 +236,6 @@ const handleSubmit = async (e) => {
     />
   </div>
 </div>
-
-
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -302,7 +300,150 @@ const handleSubmit = async (e) => {
         </div>
       </div>
     </section>
+
+
   );
 };
 
 export default Appointment;
+
+
+// // src/components/sections/Appointment.jsx
+// import React, { useState } from 'react';
+// import { useNavigate } from 'react-router-dom';
+// import SuccessMessage from '../common/SuccessMessage';
+
+// const Appointment = () => {
+//   const navigate = useNavigate();
+
+//   const [formData, setFormData] = useState({
+//     name: '',
+//     email: '',
+//     phone: '',
+//     gender: '',
+//     city: '',
+//     location: '',
+//     service: '',
+//     date: '',
+//     time: '',
+//     message: ''
+//   });
+
+//   const [isSubmitting, setIsSubmitting] = useState(false);
+//   const [showSuccess, setShowSuccess] = useState(false);
+
+//   const handleChange = (e) => {
+//     const { name, value } = e.target;
+//     setFormData(prev => ({
+//       ...prev,
+//       [name]: value
+//     }));
+//   };
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     setIsSubmitting(true);
+
+//     try {
+//       const response = await fetch('http://localhost:5000/api/appointment', {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify(formData),
+//       });
+
+//       const data = await response.json();
+
+//       if (data.success) {
+//         setShowSuccess(true);
+
+//         setFormData({
+//           name: '',
+//           email: '',
+//           phone: '',
+//           gender: '',
+//           city: '',
+//           location: '',
+//           service: '',
+//           date: '',
+//           time: '',
+//           message: ''
+//         });
+
+//         // optional redirect
+//         setTimeout(() => {
+//           navigate('/');
+//         }, 2500);
+
+//       } else {
+//         throw new Error(data.message || 'Failed to send appointment');
+//       }
+
+//     } catch (error) {
+//       console.error('Error:', error);
+//       alert('Failed to send appointment. Please try again later.');
+//     } finally {
+//       setIsSubmitting(false);
+//     }
+//   };
+
+//   return (
+//     <div className="relative min-h-screen">
+
+//       {/* ✅ SUCCESS MESSAGE */}
+//       {showSuccess && <SuccessMessage />}
+
+//       <section
+//         className={`py-20 bg-gray-50 ${
+//           showSuccess ? 'opacity-50 pointer-events-none' : ''
+//         }`}
+//         style={{
+//           width: '100vw',
+//           position: 'relative',
+//           left: '65%',
+//           right: '50%',
+//           marginLeft: '-50vw',
+//           marginRight: '-50vw'
+//         }}
+//       >
+//         <div className="container mx-auto px-4">
+//           <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+//             <div className="p-8">
+
+//               <h2 className="text-3xl font-serif font-bold text-center mb-8 text-gray-800">
+//                 Book an Appointment Online
+//               </h2>
+
+//               <form onSubmit={handleSubmit} className="space-y-6">
+
+//                 {/* ===== Your full existing form stays SAME ===== */}
+
+//                 {/* Submit Button */}
+//                 <div className="text-center">
+//                   <button
+//                     type="submit"
+//                     disabled={isSubmitting}
+//                     className={`bg-primary text-white px-8 py-3 rounded-full font-medium transition-colors
+//                       ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:bg-primary-dark'}
+//                     `}
+//                   >
+//                     {isSubmitting ? 'Sending...' : 'Book Appointment'}
+//                   </button>
+//                 </div>
+
+//               </form>
+
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+//     </div>
+//   );
+// };
+
+// export default Appointment;
+
+
+
+

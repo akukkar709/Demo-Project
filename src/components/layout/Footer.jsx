@@ -9,8 +9,8 @@ const Footer = () => {
     <footer className="w-full"
 
     style={{ 
-        width: '100vw',
-        position: 'relative',
+        width: 'Fixed',
+        position: 'Fixed',
         left: '65%',
         right: '50%',
         marginLeft: '-50vw',
