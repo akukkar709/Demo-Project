@@ -25,13 +25,53 @@ const Appointment = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Here you would typically send the data to your backend
-    console.log('Appointment booked:', formData);
-    alert('Appointment booked successfully!');
-    navigate('/');
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   // Here you would typically send the data to your backend
+  //   console.log('Appointment booked:', formData);
+  //   alert('Appointment booked successfully!');
+  //   navigate('/');
+  // };
+
+
+  // In your Appointment.jsx
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const response = await fetch('http://localhost:5000/api/appointment', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await response.json();
+    if (data.success) {
+      alert('Appointment requested successfully! We will contact you soon.');
+      // Reset form or redirect
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        gender: '',
+        city: '',
+        location: '',
+        service: '',
+        date: '',
+        time: '',
+        message: ''
+      });
+      // Optionally redirect to home
+      navigate('/');
+    } else {
+      throw new Error(data.message || 'Failed to send appointment');
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    alert('Failed to send appointment. Please try again later.');
+  }
+};
 
   return (
     <section className="py-20 bg-gray-50"
