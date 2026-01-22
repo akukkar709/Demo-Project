@@ -309,6 +309,8 @@ import Navbar from './components/layout/Navbar';
 import Hero from './components/sections/Hero';
 import Gallery from './components/sections/Gallery';
 import Appointment from './components/sections/Appointment';
+import Services from './components/sections/Services'
+import Footer from './components/layout/Footer'
 import { Routes, Route } from 'react-router-dom';
 
 import './App.css';
@@ -324,6 +326,8 @@ function App() {
             <main>
               <Hero />
               <Gallery />
+              <Services />
+              <Footer />
             </main>
           }
         />

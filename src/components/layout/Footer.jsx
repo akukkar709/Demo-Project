@@ -1,58 +1,93 @@
-// // // src/components/layout/Footer.jsx
-// import { Link } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
 
-// const Footer = () => {
-//   return (
-//     <footer className="bg-dark text-white py-12">
-//       <div className="container mx-auto px-4">
-//         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-//           <div>
-//             <h3 className="text-xl font-serif font-bold mb-4">Beauty Parlor</h3>
-//             <p className="text-gray-400">Your destination for beauty and wellness services that help you look and feel your best.</p>
-//           </div>
-          
-//           <div>
-//             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-//             <ul className="space-y-2">
-//               <li><Link to="#home" className="text-gray-400 hover:text-white transition-colors">Home</Link></li>
-//               <li><Link to="#services" className="text-gray-400 hover:text-white transition-colors">Services</Link></li>
-//               <li><Link to="#about" className="text-gray-400 hover:text-white transition-colors">About Us</Link></li>
-//               <li><Link to="#contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
-//             </ul>
-//           </div>
-          
-//           <div>
-//             <h4 className="text-lg font-semibold mb-4">Services</h4>
-//             <ul className="space-y-2">
-//               <li><Link to="#" className="text-gray-400 hover:text-white transition-colors">Hair Styling</Link></li>
-//               <li><Link to="#" className="text-gray-400 hover:text-white transition-colors">Makeup</Link></li>
-//               <li><Link to="#" className="text-gray-400 hover:text-white transition-colors">Spa Treatments</Link></li>
-//               <li><Link to="#" className="text-gray-400 hover:text-white transition-colors">Nail Care</Link></li>
-//             </ul>
-//           </div>
-          
-//           <div>
-//             <h4 className="text-lg font-semibold mb-4">Newsletter</h4>
-//             <p className="text-gray-400 mb-4">Subscribe to our newsletter for the latest updates and offers.</p>
-//             <div className="flex">
-//               <input 
-//                 type="email" 
-//                 placeholder="Your email" 
-//                 className="px-4 py-2 w-full rounded-l-lg text-gray-900 focus:outline-none"
-//               />
-//               <button className="bg-primary hover:bg-primary-dark px-4 rounded-r-lg transition-colors">
-//                 Subscribe
-//               </button>
-//             </div>
-//           </div>
-//         </div>
-        
-//         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-//           <p>&copy; {new Date().getFullYear()} Beauty Parlor. All rights reserved.</p>
-//         </div>
-//       </div>
-//     </footer>
-//   );
-// };
+const Footer = () => {
+  const currentYear = new Date().getFullYear();
+  
+  return (
+    <footer className="w-full"
 
-// export default Footer;
+    style={{ 
+        width: '100vw',
+        position: 'relative',
+        left: '65%',
+        right: '50%',
+        marginLeft: '-50vw',
+        marginRight: '-50vw'
+      }}
+    
+    
+    >
+      {/* Main Footer Section */}
+      <div className="bg-amber-200 py-16 px-4">
+        <div className="max-w-7xl mx-auto">
+          {/* Brand Logo and Tagline */}
+          <div className="text-center mb-12">
+            <h2 className="text-5xl font-serif font-bold tracking-wider text-gray-900">AURORA</h2>
+            <p className="text-sm tracking-widest text-gray-700 mb-6">BEAUTY</p>
+            <p className="max-w-2xl mx-auto text-gray-700 leading-relaxed">
+              The Exclusive Unisex Salon in your town acquainted with world-class tools and professionals for stunning looks and absolute luxury.
+            </p>
+          </div>
+
+          {/* Social Media Icons */}
+          <div className="flex justify-center space-x-6 mb-12">
+            <a href="#" className="flex items-center justify-center w-10 h-10 rounded-full border-2 border-gray-700 text-gray-700 hover:bg-gray-700 hover:text-amber-200 transition-all duration-300">
+              <FaFacebookF className="w-4 h-4" />
+            </a>
+            <a href="#" className="flex items-center justify-center w-10 h-10 rounded-full border-2 border-gray-700 text-gray-700 hover:bg-gray-700 hover:text-amber-200 transition-all duration-300">
+              <FaTwitter className="w-4 h-4" />
+            </a>
+            <a href="#" className="flex items-center justify-center w-10 h-10 rounded-full border-2 border-gray-700 text-gray-700 hover:bg-gray-700 hover:text-amber-200 transition-all duration-300">
+              <FaInstagram className="w-4 h-4" />
+            </a>
+          </div>
+
+          {/* Navigation Menu */}
+          <nav className="flex flex-wrap justify-center gap-4 md:gap-8 mb-12">
+            {['Home', 'About Us', 'Services', 'Collection', 'Franchise', 'Academy', 'e-Shop', 'Contact', 'Book Appointment', 'Salon Finder', 'Offers'].map((item) => (
+              <Link 
+                key={item} 
+                to={item.toLowerCase().replace(/\s+/g, '-')} 
+                className="text-gray-700 hover:text-gray-900 text-sm font-medium uppercase tracking-wider transition-colors"
+              >
+                {item}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="bg-white py-6 px-4">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
+          {/* Copyright */}
+          <div className="text-gray-600 text-sm mb-4 md:mb-0">
+            &copy; {currentYear} Aurora Beauty. All rights reserved.
+          </div>
+
+          {/* Sitemap and Policy Links */}
+          <div className="flex space-x-6 mb-4 md:mb-0">
+            <Link to="/sitemap" className="text-gray-600 hover:text-gray-900 text-sm">
+              Sitemap
+            </Link>
+            <Link to="/privacy-policy" className="text-gray-600 hover:text-gray-900 text-sm">
+              Privacy Policy
+            </Link>
+            <Link to="/terms" className="text-gray-600 hover:text-gray-900 text-sm">
+              Terms & Conditions
+            </Link>
+          </div>
+
+          {/* Credits */}
+          <div className="text-gray-500 text-xs">
+            Crafted with <span className="text-red-500">❤</span> by Aurora Team
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
