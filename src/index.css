@@ -19,7 +19,8 @@
   }
   
   html {
-    scroll-behavior: smooth;
+    max-width: 100%;
+  overflow-x: hidden;
   }
   
   body {
@@ -48,10 +49,12 @@ html, body, #root {
   margin: 0px;
 }
 
-html {
-  scroll-behavior: smooth;
-}
 
+#root{
+   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
 
 #gallery {

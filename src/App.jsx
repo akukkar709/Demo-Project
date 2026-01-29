@@ -305,34 +305,79 @@
 
 
 
+// import Navbar from './components/layout/Navbar';
+// import Hero from './components/sections/Hero';
+// import Gallery from './components/sections/Gallery';
+// import Appointment from './components/sections/Appointment';
+// import Services from './components/sections/Services';
+// import Footer from './components/layout/Footer';
+// import { Routes, Route } from 'react-router-dom';
+
+// import './App.css';
+
+// function App() {
+//   return (
+//     <div className="min-h-screen bg-white flex flex-col">
+//       <Navbar />
+//       <Routes>
+//         <Route
+//           path="/"
+//           element={
+//             <main className="flex-glow">
+//               <Hero />
+//               <Gallery />
+//               <Services />
+            
+//             </main>
+           
+//           }
+//         />
+        
+//         <Route path="/appointment" 
+        
+//         element<main className="flex-grow">
+//               <Appointment />
+//             </main>
+//       </Routes>
+//       <Footer/>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+
 import Navbar from './components/layout/Navbar';
 import Hero from './components/sections/Hero';
 import Gallery from './components/sections/Gallery';
 import Appointment from './components/sections/Appointment';
-import Services from './components/sections/Services'
-import Footer from './components/layout/Footer'
+import Services from './components/sections/Services';
+import Footer from './components/layout/Footer';
 import { Routes, Route } from 'react-router-dom';
 
 import './App.css';
 
 function App() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white flex flex-col">
       <Navbar />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <main>
-              <Hero />
-              <Gallery />
-              <Services />
-              <Footer />
-            </main>
-          }
-        />
-        <Route path="/appointment" element={<Appointment />} />
-      </Routes>
+      <main className="flex-grow">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Hero />
+                <Gallery />
+                <Services />
+              </>
+            }
+          />
+          <Route path="/appointment" element={<Appointment />} />
+        </Routes>
+      </main>
+      <Footer />
     </div>
   );
 }
