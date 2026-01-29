@@ -6,15 +6,14 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-8"
     
-     style={{ 
-        width: '100vw',
-        position: 'relative',
-        left: '65%',
-        right: '50%',
-        marginLeft: '-50vw',
-        marginRight: '-50vw'
-      }}
-    
+//     style={{
+//   width: '100vw',
+//   position: 'relative',
+//   left: '50%',
+ 
+//   transform: 'translateX(-50%)',
+// }}
+
     
     >
       <div className="container mx-auto px-4">

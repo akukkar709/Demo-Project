@@ -965,13 +965,153 @@ export default Hero; */}
 
 
 // src/components/sections/Hero.jsx
+// import React, { useState, useEffect } from 'react';
+// import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+
+// const Hero = () => {
+//   const [currentSlide, setCurrentSlide] = useState(0);
+  
+//   // Add your hero images here
+//   const heroImages = [
+//     {
+//       src: '/images/hero/hero-1.jpg',
+//       alt: 'Luxury Spa Experience',
+//       title: 'Experience Ultimate Relaxation',
+//       subtitle: 'Pamper yourself with our premium spa treatments'
+//     },
+//     {
+//       src: '/images/hero/hero-2.jpg',
+//       alt: 'Hair Styling',
+//       title: 'Trendy Hair Styles',
+//       subtitle: 'Get the perfect look with our expert stylists'
+//     },
+//     {
+//       src: '/images/hero/hero-3.jpg',
+//       alt: 'Beauty Treatments',
+//       title: 'Beauty & Wellness',
+//       subtitle: 'Enhance your natural beauty with our treatments'
+//     }
+//   ];
+
+//   // Auto slide functionality
+//   useEffect(() => {
+//     const timer = setInterval(() => {
+//       setCurrentSlide((prev) => (prev === heroImages.length - 1 ? 0 : prev + 1));
+//     }, 5000); // Change slide every 5 seconds
+
+//     return () => clearInterval(timer);
+//   }, []);
+
+//   const nextSlide = () => {
+//     setCurrentSlide((prev) => (prev === heroImages.length - 1 ? 0 : prev + 1));
+//   };
+
+//   const prevSlide = () => {
+//     setCurrentSlide((prev) => (prev === 0 ? heroImages.length - 1 : prev - 1));
+//   };
+
+//   // Add fade transition effect
+//   const [fade, setFade] = useState(true);
+//   useEffect(() => {
+//     setFade(false);
+//     const timer = setTimeout(() => setFade(true), 100);
+//     return () => clearTimeout(timer);
+//   }, [currentSlide]);
+
+//   return (
+//     <section className="relative w-full h-screen overflow-hidden"
+//      style={{ 
+//         width: '100vw',
+//         position: 'relative',
+//         left: '50%',
+//         right: '50%',
+//         marginLeft: '-50vw',
+//         marginRight: '-50vw'
+//       }}
+    
+    
+//     >
+//       {/* Slides */}
+//       <div className="relative w-full h-full">
+//         {heroImages.map((image, index) => (
+//           <div
+//             key={index}
+//             className={`absolute inset-0 transition-opacity duration-1000 ${
+//               index === currentSlide ? 'opacity-100' : 'opacity-0'
+//             }`}
+//           >
+//             <img
+//               src={image.src}
+//               alt={image.alt}
+//               className={`w-full h-full object-cover transition-transform duration-1000 ${
+//                 fade ? 'scale-100' : 'scale-110'
+//               }`}
+//             />
+//             {/* Overlay */}
+//             <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+//               <div className={`text-center text-white px-4 transition-all duration-1000 transform ${
+//                 fade ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+//               }`}>
+//                 <h1 className="text-4xl md:text-6xl font-bold mb-4 font-serif">
+//                   {image.title}
+//                 </h1>
+//                 <p className="text-xl md:text-2xl mb-8">{image.subtitle}</p>
+//                 <button className="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-full text-lg font-medium transition-colors">
+//                   Book Now
+//                 </button>
+//               </div>
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+
+//       {/* Navigation Arrows */}
+//       <button
+//         onClick={prevSlide}
+//         className="absolute left-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full p-2 z-10 transition-all"
+//         aria-label="Previous slide"
+//       >
+//         <FiChevronLeft className="w-6 h-6 text-gray-800" />
+//       </button>
+//       <button
+//         onClick={nextSlide}
+//         className="absolute right-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full p-2 z-10 transition-all"
+//         aria-label="Next slide"
+//       >
+//         <FiChevronRight className="w-6 h-6 text-gray-800" />
+//       </button>
+
+//       {/* Dots Indicator */}
+//       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
+//         {heroImages.map((_, index) => (
+//           <button
+//             key={index}
+//             onClick={() => setCurrentSlide(index)}
+//             className={`w-3 h-3 rounded-full transition-all ${
+//               index === currentSlide ? 'bg-white w-8' : 'bg-white bg-opacity-50'
+//             }`}
+//             aria-label={`Go to slide ${index + 1}`}
+//           />
+//         ))}
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default Hero;
+
+
+
+
+
+
 import React, { useState, useEffect } from 'react';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  
-  // Add your hero images here
+  const [fade, setFade] = useState(true);
+
   const heroImages = [
     {
       src: '/images/hero/hero-1.jpg',
@@ -993,44 +1133,38 @@ const Hero = () => {
     }
   ];
 
-  // Auto slide functionality
+  // Auto slide
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev === heroImages.length - 1 ? 0 : prev + 1));
-    }, 5000); // Change slide every 5 seconds
+      setCurrentSlide(prev =>
+        prev === heroImages.length - 1 ? 0 : prev + 1
+      );
+    }, 5000);
 
     return () => clearInterval(timer);
   }, []);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev === heroImages.length - 1 ? 0 : prev + 1));
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? heroImages.length - 1 : prev - 1));
-  };
-
-  // Add fade transition effect
-  const [fade, setFade] = useState(true);
+  // Fade animation
   useEffect(() => {
     setFade(false);
     const timer = setTimeout(() => setFade(true), 100);
     return () => clearTimeout(timer);
   }, [currentSlide]);
 
+  const nextSlide = () => {
+    setCurrentSlide(prev =>
+      prev === heroImages.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide(prev =>
+      prev === 0 ? heroImages.length - 1 : prev - 1
+    );
+  };
+
   return (
-    <section className="relative w-full h-screen overflow-hidden"
-     style={{ 
-        width: '100vw',
-        position: 'relative',
-        left: '65%',
-        right: '50%',
-        marginLeft: '-50vw',
-        marginRight: '-50vw'
-      }}
-    
-    
-    >
+    <section className="relative w-screen h-screen overflow-hidden">
       {/* Slides */}
       <div className="relative w-full h-full">
         {heroImages.map((image, index) => (
@@ -1047,16 +1181,25 @@ const Hero = () => {
                 fade ? 'scale-100' : 'scale-110'
               }`}
             />
+
             {/* Overlay */}
-            <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
-              <div className={`text-center text-white px-4 transition-all duration-1000 transform ${
-                fade ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-              }`}>
+            <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+              <div
+                className={`text-center text-white px-4 transition-all duration-1000 transform ${
+                  fade
+                    ? 'translate-y-0 opacity-100'
+                    : 'translate-y-10 opacity-0'
+                }`}
+              >
                 <h1 className="text-4xl md:text-6xl font-bold mb-4 font-serif">
                   {image.title}
                 </h1>
-                <p className="text-xl md:text-2xl mb-8">{image.subtitle}</p>
-                <button className="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-full text-lg font-medium transition-colors">
+
+                <p className="text-xl md:text-2xl mb-8">
+                  {image.subtitle}
+                </p>
+
+                <button className="bg-primary hover:bg-primary-dark px-8 py-3 rounded-full text-lg font-medium transition-colors">
                   Book Now
                 </button>
               </div>
@@ -1065,32 +1208,32 @@ const Hero = () => {
         ))}
       </div>
 
-      {/* Navigation Arrows */}
+      {/* Navigation */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full p-2 z-10 transition-all"
-        aria-label="Previous slide"
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/60 hover:bg-white rounded-full p-2 z-10 transition"
       >
         <FiChevronLeft className="w-6 h-6 text-gray-800" />
       </button>
+
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full p-2 z-10 transition-all"
-        aria-label="Next slide"
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/60 hover:bg-white rounded-full p-2 z-10 transition"
       >
         <FiChevronRight className="w-6 h-6 text-gray-800" />
       </button>
 
-      {/* Dots Indicator */}
+      {/* Dots */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
         {heroImages.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all ${
-              index === currentSlide ? 'bg-white w-8' : 'bg-white bg-opacity-50'
+            className={`h-3 rounded-full transition-all ${
+              index === currentSlide
+                ? 'bg-white w-8'
+                : 'bg-white/50 w-3'
             }`}
-            aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>

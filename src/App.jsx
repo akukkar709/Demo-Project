@@ -360,7 +360,7 @@ import './App.css';
 
 function App() {
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <div className="min-h-screen bg-white flex flex-col overflex-x-hidden">
       <Navbar />
       <main className="flex-grow">
         <Routes>
@@ -370,7 +370,9 @@ function App() {
               <>
                 <Hero />
                 <Gallery />
+                <div className="container mx-auto px-4">
                 <Services />
+                </div>
               </>
             }
           />
