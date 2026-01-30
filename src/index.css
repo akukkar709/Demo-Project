@@ -1,0 +1,97 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  :root {
+    --primary: #FF6B6B;
+    --primary-light: #FF8E8E;
+    --primary-dark: #E64A4A;
+    --secondary: #4ECDC4;
+    --secondary-light: #7BDFD7;
+    --secondary-dark: #3AB8B0;
+    --dark: #1a1a1a;
+    --light: #f8f9fa;
+  }
+  
+  html {
+    max-width: 100%;
+  overflow-x: hidden;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark);
+    background-color: lab(41.55% 0 -0.01);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+  }
+}
+
+#home {
+  height: 100vh;
+  width: 100%;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  overflow-x: hidden;
+
+}
+
+#root{
+   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+
+
+
+/* #gallery {
+  width: 100%;
+  max-width: 300%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+#gallery .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#gallery .gallery-item {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+#gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+} */
