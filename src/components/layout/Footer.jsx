@@ -95,9 +95,9 @@ const Footer = () => {
           {/* Navigation Links */}
           <nav className="flex flex-wrap justify-center gap-4 mb-10">
             {[
-              'Home','About Us','Services','Collection','Franchise',
-              'Academy','e-Shop','Contact','Book Appointment',
-              'Salon Finder','Offers'
+              'Home','Services','Collection',
+             ,'Contact','Book Appointment',
+              
             ].map((item) => (
               <a
                 key={item}
