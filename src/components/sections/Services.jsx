@@ -128,6 +128,274 @@
 // export default Services;
 
 
+// import React from 'react';
+// import { Link } from 'react-router-dom';
+
+// const Services = () => {
+//   const services = {
+//     gents: [
+//       { name: 'Classic Haircut', duration: '30 min', price: '$45+' },
+//       { name: 'Beard Trim & Shape Up', duration: '30 min', price: '$30+' },
+//       { name: 'Hot Towel Shave', duration: '45 min', price: '$50+' },
+//       { name: 'Hair Coloring', duration: '60 min', price: '$75+' },
+//       { name: 'Facial Treatment', duration: '45 min', price: '$65+' }
+//     ],
+//     ladies: [
+//       { name: 'Haircut & Styling', duration: '60 min', price: '$75+' },
+//       { name: 'Hair Coloring', duration: '2-3 hours', price: '$120+' },
+//       { name: 'Keratin Treatment', duration: '2 hours', price: '$150+' },
+//       { name: 'Blowout & Styling', duration: '45 min', price: '$55+' },
+//       { name: 'Makeup Application', duration: '60 min', price: '$85+' }
+//     ]
+//   };
+
+//   return (
+//     <section id="services" className="py-20 px-4 md:px-8 bg-white"
+    
+//      style={{ 
+//         width: '100vw',
+//         position: 'relative',
+//         left: '65%',
+//         right: '50%',
+//         marginLeft: '-50vw',
+//         marginRight: '-50vw'
+//       }}
+
+//     >
+//       <div className="max-w-7xl mx-auto">
+//         {/* Section Header */}
+//         <div className="text-center mb-16">
+//           <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-4">
+//             Our Services
+//           </h2>
+//           <div className="w-20 h-1 bg-primary mx-auto"></div>
+//         </div>
+
+//         {/* Service Cards */}
+//         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+//           {/* Gents Card */}
+//           <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 h-[600px]">
+//             <div 
+//               className="absolute inset-0 bg-cover bg-center transform group-hover:scale-105 transition-transform duration-700"
+//               style={{ 
+//                 backgroundImage: 'url(/images/services/gents-service.jpg)',
+//                 backgroundPosition: 'center 30%'
+//               }}
+//             >
+//               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+//             </div>
+//             <div className="relative h-full flex flex-col justify-end p-8 text-white">
+//               <h3 className="text-5xl md:text-6xl font-serif font-bold mb-6">GENTS</h3>
+//               <ul className="space-y-3 mb-8">
+//                 {services.gents.map((service, index) => (
+//                   <li key={index} className="flex justify-between items-center py-2 border-b border-white/20">
+//                     <span className="font-medium">{service.name}</span>
+//                     <span className="text-sm bg-white/20 px-3 py-1 rounded-full">
+//                       {service.price}
+//                     </span>
+//                   </li>
+//                 ))}
+//               </ul>
+//               <Link 
+//                 to="/appointment?service=gents" 
+//                 className="inline-block bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors w-full text-center"
+//               >
+//                 Book Now
+//               </Link>
+//             </div>
+//           </div>
+
+//           {/* Ladies Card */}
+//           <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 h-[600px]">
+//             <div 
+//               className="absolute inset-0 bg-cover bg-center transform group-hover:scale-105 transition-transform duration-700"
+//               style={{ 
+//                 backgroundImage: 'url(/images/services/ladies-service.jpg)',
+//                 backgroundPosition: 'center 30%'
+//               }}
+//             >
+//               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+//             </div>
+//             <div className="relative h-full flex flex-col justify-end p-8 text-white">
+//               <h3 className="text-5xl md:text-6xl font-serif font-bold mb-6">LADIES</h3>
+//               <ul className="space-y-3 mb-8">
+//                 {services.ladies.map((service, index) => (
+//                   <li key={index} className="flex justify-between items-center py-2 border-b border-white/20">
+//                     <span className="font-medium">{service.name}</span>
+//                     <span className="text-sm bg-white/20 px-3 py-1 rounded-full">
+//                       {service.price}
+//                     </span>
+//                   </li>
+//                 ))}
+//               </ul>
+//               <Link 
+//                 to="/appointment?service=ladies" 
+//                 className="inline-block bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors w-full text-center"
+//               >
+//                 Book Now
+//               </Link>
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* All Services Link */}
+//         <div className="text-center mt-16">
+//           {/* <Link 
+//             to="/services" 
+//             className="inline-flex items-center text-gray-700 hover:text-primary transition-colors group"
+//           >
+//             <span className="mr-2">View All Services</span>
+//             <svg 
+//               className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" 
+//               fill="none" 
+//               stroke="currentColor" 
+//               viewBox="0 0 24 24"
+//             >
+//               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+//             </svg>
+//           </Link> */}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default Services;
+
+
+
+
+// import React from 'react';
+// import { Link } from 'react-router-dom';
+
+// const Services = () => {
+//   const services = {
+//     gents: [
+//       { name: 'Classic Haircut', duration: '30 min', price: '$45+' },
+//       { name: 'Beard Trim & Shape Up', duration: '30 min', price: '$30+' },
+//       { name: 'Hot Towel Shave', duration: '45 min', price: '$50+' },
+//       { name: 'Hair Coloring', duration: '60 min', price: '$75+' },
+//       { name: 'Facial Treatment', duration: '45 min', price: '$65+' }
+//     ],
+//     ladies: [
+//       { name: 'Haircut & Styling', duration: '60 min', price: '$75+' },
+//       { name: 'Hair Coloring', duration: '2-3 hours', price: '$120+' },
+//       { name: 'Keratin Treatment', duration: '2 hours', price: '$150+' },
+//       { name: 'Blowout & Styling', duration: '45 min', price: '$55+' },
+//       { name: 'Makeup Application', duration: '60 min', price: '$85+' }
+//     ]
+//   };
+
+//   return (
+//     <section
+//       id="services"
+//       className="w-screen min-h-screen bg-white py-20"
+//     >
+//       {/* CONTENT WRAPPER */}
+//       <div className="max-w-7xl mx-auto px-6 md:px-12">
+
+//         {/* Section Header */}
+//         <div className="text-center mb-16">
+//           <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-4">
+//             Our Services
+//           </h2>
+//           <div className="w-20 h-1 bg-primary mx-auto"></div>
+//         </div>
+
+//         {/* Service Cards */}
+//         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+
+//           {/* GENTS */}
+//           <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 h-[600px]">
+//             <div
+//               className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700"
+//               style={{
+//                 backgroundImage: 'url(/images/services/gents-service.jpg)',
+//                 backgroundPosition: 'center 30%',
+//               }}
+//             >
+//               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+//             </div>
+
+//             <div className="relative h-full flex flex-col justify-end p-8 text-white">
+//               <h3 className="text-5xl md:text-6xl font-serif font-bold mb-6">
+//                 GENTS
+//               </h3>
+
+//               <ul className="space-y-3 mb-8">
+//                 {services.gents.map((service, index) => (
+//                   <li
+//                     key={index}
+//                     className="flex justify-between items-center py-2 border-b border-white/20"
+//                   >
+//                     <span>{service.name}</span>
+//                     <span className="text-sm bg-white/20 px-3 py-1 rounded-full">
+//                       {service.price}
+//                     </span>
+//                   </li>
+//                 ))}
+//               </ul>
+
+//               <Link
+//                 to="/appointment?service=gents"
+//                 className="bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition w-full text-center"
+//               >
+//                 Book Now
+//               </Link>
+//             </div>
+//           </div>
+
+//           {/* LADIES */}
+//           <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 h-[600px]">
+//             <div
+//               className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700"
+//               style={{
+//                 backgroundImage: 'url(/images/services/ladies-service.jpg)',
+//                 backgroundPosition: 'center 30%',
+//               }}
+//             >
+//               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+//             </div>
+
+//             <div className="relative h-full flex flex-col justify-end p-8 text-white">
+//               <h3 className="text-5xl md:text-6xl font-serif font-bold mb-6">
+//                 LADIES
+//               </h3>
+
+//               <ul className="space-y-3 mb-8">
+//                 {services.ladies.map((service, index) => (
+//                   <li
+//                     key={index}
+//                     className="flex justify-between items-center py-2 border-b border-white/20"
+//                   >
+//                     <span>{service.name}</span>
+//                     <span className="text-sm bg-white/20 px-3 py-1 rounded-full">
+//                       {service.price}
+//                     </span>
+//                   </li>
+//                 ))}
+//               </ul>
+
+//               <Link
+//                 to="/appointment?service=ladies"
+//                 className="bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition w-full text-center"
+//               >
+//                 Book Now
+//               </Link>
+//             </div>
+//           </div>
+
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default Services;
+
+
+
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -150,19 +418,13 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="py-20 px-4 md:px-8 bg-white"
-    
-     style={{ 
-        width: '100vw',
-        position: 'relative',
-        left: '65%',
-        right: '50%',
-        marginLeft: '-50vw',
-        marginRight: '-50vw'
-      }}
-
+    <section
+      id="services"
+      className="w-screen min-h-screen bg-white py-20"
     >
-      <div className="max-w-7xl mx-auto">
+      {/* FULL WIDTH CONTAINER */}
+      <div className="w-full px-6 md:px-16 lg:px-24">
+
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-4">
@@ -172,88 +434,88 @@ const Services = () => {
         </div>
 
         {/* Service Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
-          {/* Gents Card */}
-          <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 h-[600px]">
-            <div 
-              className="absolute inset-0 bg-cover bg-center transform group-hover:scale-105 transition-transform duration-700"
-              style={{ 
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+          {/* GENTS */}
+          <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 h-[600px]">
+            <div
+              className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700"
+              style={{
                 backgroundImage: 'url(/images/services/gents-service.jpg)',
-                backgroundPosition: 'center 30%'
+                backgroundPosition: 'center 30%',
               }}
             >
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
             </div>
+
             <div className="relative h-full flex flex-col justify-end p-8 text-white">
-              <h3 className="text-5xl md:text-6xl font-serif font-bold mb-6">GENTS</h3>
+              <h3 className="text-5xl md:text-6xl font-serif font-bold mb-6">
+                GENTS
+              </h3>
+
               <ul className="space-y-3 mb-8">
                 {services.gents.map((service, index) => (
-                  <li key={index} className="flex justify-between items-center py-2 border-b border-white/20">
-                    <span className="font-medium">{service.name}</span>
+                  <li
+                    key={index}
+                    className="flex justify-between items-center py-2 border-b border-white/20"
+                  >
+                    <span>{service.name}</span>
                     <span className="text-sm bg-white/20 px-3 py-1 rounded-full">
                       {service.price}
                     </span>
                   </li>
                 ))}
               </ul>
-              <Link 
-                to="/appointment?service=gents" 
-                className="inline-block bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors w-full text-center"
+
+              <Link
+                to="/appointment?service=gents"
+                className="bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition w-full text-center"
               >
                 Book Now
               </Link>
             </div>
           </div>
 
-          {/* Ladies Card */}
-          <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 h-[600px]">
-            <div 
-              className="absolute inset-0 bg-cover bg-center transform group-hover:scale-105 transition-transform duration-700"
-              style={{ 
+          {/* LADIES */}
+          <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 h-[600px]">
+            <div
+              className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700"
+              style={{
                 backgroundImage: 'url(/images/services/ladies-service.jpg)',
-                backgroundPosition: 'center 30%'
+                backgroundPosition: 'center 30%',
               }}
             >
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
             </div>
+
             <div className="relative h-full flex flex-col justify-end p-8 text-white">
-              <h3 className="text-5xl md:text-6xl font-serif font-bold mb-6">LADIES</h3>
+              <h3 className="text-5xl md:text-6xl font-serif font-bold mb-6">
+                LADIES
+              </h3>
+
               <ul className="space-y-3 mb-8">
                 {services.ladies.map((service, index) => (
-                  <li key={index} className="flex justify-between items-center py-2 border-b border-white/20">
-                    <span className="font-medium">{service.name}</span>
+                  <li
+                    key={index}
+                    className="flex justify-between items-center py-2 border-b border-white/20"
+                  >
+                    <span>{service.name}</span>
                     <span className="text-sm bg-white/20 px-3 py-1 rounded-full">
                       {service.price}
                     </span>
                   </li>
                 ))}
               </ul>
-              <Link 
-                to="/appointment?service=ladies" 
-                className="inline-block bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors w-full text-center"
+
+              <Link
+                to="/appointment?service=ladies"
+                className="bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition w-full text-center"
               >
                 Book Now
               </Link>
             </div>
           </div>
-        </div>
 
-        {/* All Services Link */}
-        <div className="text-center mt-16">
-          {/* <Link 
-            to="/services" 
-            className="inline-flex items-center text-gray-700 hover:text-primary transition-colors group"
-          >
-            <span className="mr-2">View All Services</span>
-            <svg 
-              className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </Link> */}
         </div>
       </div>
     </section>

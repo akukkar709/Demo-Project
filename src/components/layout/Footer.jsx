@@ -1,39 +1,106 @@
+// import React from 'react';
+// import { Link } from 'react-router-dom';
+// import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
+
+// const Footer = () => {
+//   return (
+//     <footer className="bg-gray-900 text-white py-8"
+    
+// //     style={{
+// //   width: '100vw',
+// //   position: 'relative',
+// //   left: '50%',
+ 
+// //   transform: 'translateX(-50%)',
+// // }}
+
+    
+//     >
+//       <div className="container mx-auto px-4">
+//         <div className="text-center">
+//           <h2 className="text-4xl font-serif font-bold mb-2">AURORA</h2>
+//           <p className="text-sm tracking-widest mb-6">BEAUTY</p>
+//           <p className="max-w-2xl mx-auto text-gray-300 mb-8">
+//             The Exclusive Unisex Salon in your town acquainted with world-class tools and professionals for stunning looks and absolute luxury.
+//           </p>
+          
+//           {/* Social Icons */}
+//           <div className="flex justify-center space-x-6 mb-8">
+//             {/* Add your social icons here */}
+//           </div>
+          
+//           {/* Navigation Links */}
+//           <nav className="flex flex-wrap justify-center gap-4 mb-8">
+//             {['Home', 'About Us', 'Services', 'Collection', 'Franchise', 'Academy', 'e-Shop', 'Contact', 'Book Appointment', 'Salon Finder', 'Offers'].map((item) => (
+//               <a 
+//                 key={item} 
+//                 href={item === 'Home' ? '/' : `#${item.toLowerCase().replace(/\s+/g, '-')}`}
+//                 className="text-gray-300 hover:text-white text-sm uppercase tracking-wider"
+//               >
+//                 {item}
+//               </a>
+//             ))}
+//           </nav>
+          
+//           {/* Copyright */}
+//           <div className="pt-6 border-t border-gray-800">
+//             <div className="flex flex-col md:flex-row justify-between items-center">
+//               <p className="text-gray-400 text-sm mb-4 md:mb-0">
+//                 &​copy; {new Date().getFullYear()} Aurora Beauty. All rights reserved.
+//               </p>
+//               <div className="flex space-x-6">
+//                 <a href="/privacy" className="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+//                 <a href="/terms" className="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </footer>
+//   );
+// };
+ 
+// export default Footer;
+
+
+
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-8"
-    
-//     style={{
-//   width: '100vw',
-//   position: 'relative',
-//   left: '50%',
- 
-//   transform: 'translateX(-50%)',
-// }}
+    <footer className="w-screen bg-gray-900 text-white py-10">
+      
+      {/* FULL WIDTH WRAPPER */}
+      <div className="w-full px-6 md:px-16 lg:px-24">
 
-    
-    >
-      <div className="container mx-auto px-4">
         <div className="text-center">
           <h2 className="text-4xl font-serif font-bold mb-2">AURORA</h2>
           <p className="text-sm tracking-widest mb-6">BEAUTY</p>
-          <p className="max-w-2xl mx-auto text-gray-300 mb-8">
-            The Exclusive Unisex Salon in your town acquainted with world-class tools and professionals for stunning looks and absolute luxury.
+
+          <p className="max-w-3xl mx-auto text-gray-300 mb-8">
+            The Exclusive Unisex Salon in your town acquainted with world-class tools
+            and professionals for stunning looks and absolute luxury.
           </p>
-          
+
           {/* Social Icons */}
-          <div className="flex justify-center space-x-6 mb-8">
-            {/* Add your social icons here */}
+          <div className="flex justify-center space-x-6 mb-8 text-lg">
+            <a href="#" className="hover:text-white text-gray-400"><FaFacebookF /></a>
+            <a href="#" className="hover:text-white text-gray-400"><FaInstagram /></a>
+            <a href="#" className="hover:text-white text-gray-400"><FaTwitter /></a>
           </div>
-          
+
           {/* Navigation Links */}
-          <nav className="flex flex-wrap justify-center gap-4 mb-8">
-            {['Home', 'About Us', 'Services', 'Collection', 'Franchise', 'Academy', 'e-Shop', 'Contact', 'Book Appointment', 'Salon Finder', 'Offers'].map((item) => (
-              <a 
-                key={item} 
+          <nav className="flex flex-wrap justify-center gap-4 mb-10">
+            {[
+              'Home','About Us','Services','Collection','Franchise',
+              'Academy','e-Shop','Contact','Book Appointment',
+              'Salon Finder','Offers'
+            ].map((item) => (
+              <a
+                key={item}
                 href={item === 'Home' ? '/' : `#${item.toLowerCase().replace(/\s+/g, '-')}`}
                 className="text-gray-300 hover:text-white text-sm uppercase tracking-wider"
               >
@@ -41,26 +108,25 @@ const Footer = () => {
               </a>
             ))}
           </nav>
-          
-          {/* Copyright */}
-          <div className="pt-6 border-t border-gray-800">
-            <div className="flex flex-col md:flex-row justify-between items-center">
-              <p className="text-gray-400 text-sm mb-4 md:mb-0">
-                &​copy; {new Date().getFullYear()} Aurora Beauty. All rights reserved.
-              </p>
-              <div className="flex space-x-6">
-                <a href="/privacy" className="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
-                <a href="/terms" className="text-gray-400 hover:text-white text-sm">Terms of Service</a>
-              </div>
+
+          {/* Bottom Bar */}
+          <div className="pt-6 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+            <p>
+              © {new Date().getFullYear()} Aurora Beauty. All rights reserved.
+            </p>
+
+            <div className="flex space-x-6 mt-4 md:mt-0">
+              <a href="/privacy" className="hover:text-white">Privacy Policy</a>
+              <a href="/terms" className="hover:text-white">Terms of Service</a>
             </div>
           </div>
+
         </div>
       </div>
     </footer>
   );
 };
- 
-export default Footer;
 
+export default Footer;
 
 
