@@ -473,84 +473,88 @@ const Appointment = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   setIsSubmitting(true);
-
-  //   try {
-  //     const response = await fetch('http://localhost:5000/api/appointment', {
-  //       method: 'POST',
-  //       headers: { 'Content-Type': 'application/json' },
-  //       body: JSON.stringify(formData)
-  //     });
-
-  //     const data = await response.json();
-
-  //     if (data.success) {
-  //       setFormData({
-  //         name: '',
-  //         email: '',
-  //         phone: '',
-  //         gender: '',
-  //         city: '',
-  //         location: '',
-  //         service: '',
-  //         date: '',
-  //         time: '',
-  //         message: ''
-  //       });
-  //       navigate('/');
-  //     } else {
-  //       throw new Error('Failed to book appointment');
-  //     }
-  //   } catch (err) {
-  //     alert('Something went wrong. Please try again.');
-  //   } finally {
-  //     setIsSubmitting(false);
-  //   }
-  // };
-
-
+  const API_BASE_URL = process.env.NODE_ENV === 'production' 
+  ? 'https://your-production-domain.com/api' 
+  : 'http://localhost:5000/api';
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
-  setIsSubmitting(true);
+    e.preventDefault();
+    setIsSubmitting(true);
 
-  try {
-    const response = await fetch('/api/appointment', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
-    });
+    try {
+      const response = await fetch(`${API_BASE_URL}/appointment`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
 
-    const data = await response.json();
+      const data = await response.json();
 
-    if (!response.ok || !data.success) {
-      throw new Error("Booking failed");
+      if (data.success) {
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          gender: '',
+          city: '',
+          location: '',
+          service: '',
+          date: '',
+          time: '',
+          message: ''
+        });
+        navigate('/');
+      } else {
+        throw new Error('Failed to book appointment');
+      }
+    } catch (err) {
+      alert('Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
     }
+  };
 
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      gender: '',
-      city: '',
-      location: '',
-      service: '',
-      date: '',
-      time: '',
-      message: ''
-    });
 
-    navigate('/');
-  } catch (err) {
-    alert('❌ Network error. Please try again.');
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+
+//   const handleSubmit = async (e) => {
+//   e.preventDefault();
+//   setIsSubmitting(true);
+
+//   try {
+//     const response = await fetch('/api/appointment', {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json'
+//       },
+//       body: JSON.stringify(formData)
+//     });
+
+//     const data = await response.json();
+
+//     if (!response.ok || !data.success) {
+//       throw new Error("Booking failed");
+//     }
+
+//     setFormData({
+//       name: '',
+//       email: '',
+//       phone: '',
+//       gender: '',
+//       city: '',
+//       location: '',
+//       service: '',
+//       date: '',
+//       time: '',
+//       message: ''
+//     });
+
+//     navigate('/');
+//   } catch (err) {
+//     alert('❌ Network error. Please try again.');
+//   } finally {
+//     setIsSubmitting(false);
+//   }
+// };
 
 
   return (
