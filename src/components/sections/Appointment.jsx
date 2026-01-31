@@ -474,7 +474,7 @@ const Appointment = () => {
   };
 
   const API_BASE_URL = process.env.NODE_ENV === 'production' 
-  ? 'https://your-production-domain.com/api' 
+  ? 'https://demo-project-one-beige.vercel.app/api' 
   : 'http://localhost:5000/api';
 
   const handleSubmit = async (e) => {
