@@ -473,42 +473,85 @@ const Appointment = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setIsSubmitting(true);
+
+  //   try {
+  //     const response = await fetch('http://localhost:5000/api/appointment', {
+  //       method: 'POST',
+  //       headers: { 'Content-Type': 'application/json' },
+  //       body: JSON.stringify(formData)
+  //     });
+
+  //     const data = await response.json();
+
+  //     if (data.success) {
+  //       setFormData({
+  //         name: '',
+  //         email: '',
+  //         phone: '',
+  //         gender: '',
+  //         city: '',
+  //         location: '',
+  //         service: '',
+  //         date: '',
+  //         time: '',
+  //         message: ''
+  //       });
+  //       navigate('/');
+  //     } else {
+  //       throw new Error('Failed to book appointment');
+  //     }
+  //   } catch (err) {
+  //     alert('Something went wrong. Please try again.');
+  //   } finally {
+  //     setIsSubmitting(false);
+  //   }
+  // };
+
+
+
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+  e.preventDefault();
+  setIsSubmitting(true);
 
-    try {
-      const response = await fetch('http://localhost:5000/api/appointment', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      });
+  try {
+    const response = await fetch('/api/appointment', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    });
 
-      const data = await response.json();
+    const data = await response.json();
 
-      if (data.success) {
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          gender: '',
-          city: '',
-          location: '',
-          service: '',
-          date: '',
-          time: '',
-          message: ''
-        });
-        navigate('/');
-      } else {
-        throw new Error('Failed to book appointment');
-      }
-    } catch (err) {
-      alert('Something went wrong. Please try again.');
-    } finally {
-      setIsSubmitting(false);
+    if (!response.ok || !data.success) {
+      throw new Error("Booking failed");
     }
-  };
+
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      gender: '',
+      city: '',
+      location: '',
+      service: '',
+      date: '',
+      time: '',
+      message: ''
+    });
+
+    navigate('/');
+  } catch (err) {
+    alert('❌ Network error. Please try again.');
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
 
   return (
     <section className="w-screen min-h-screen bg-gray-50 py-20">
