@@ -354,6 +354,9 @@ import Gallery from './components/sections/Gallery';
 import Appointment from './components/sections/Appointment';
 import Services from './components/sections/Services';
 import Footer from './components/layout/Footer';
+import About from './components/sections/About';
+import Contact from './components/sections/Contact'
+ 
 import { Routes, Route } from 'react-router-dom';
 
 import './App.css';
@@ -377,6 +380,10 @@ function App() {
             }
           />
           <Route path="/appointment" element={<Appointment />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/Gallery" element={<Gallery />} />
+           <Route path="/about" element={<About />} />
+           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
       <Footer />
