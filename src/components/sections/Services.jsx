@@ -396,6 +396,137 @@
 
 
 
+// import React from 'react';
+// import { Link } from 'react-router-dom';
+
+// const Services = () => {
+//   const services = {
+//     gents: [
+//       { name: 'Classic Haircut', duration: '30 min', price: '$45+' },
+//       { name: 'Beard Trim & Shape Up', duration: '30 min', price: '$30+' },
+//       { name: 'Hot Towel Shave', duration: '45 min', price: '$50+' },
+//       { name: 'Hair Coloring', duration: '60 min', price: '$75+' },
+//       { name: 'Facial Treatment', duration: '45 min', price: '$65+' }
+//     ],
+//     ladies: [
+//       { name: 'Haircut & Styling', duration: '60 min', price: '$75+' },
+//       { name: 'Hair Coloring', duration: '2-3 hours', price: '$120+' },
+//       { name: 'Keratin Treatment', duration: '2 hours', price: '$150+' },
+//       { name: 'Blowout & Styling', duration: '45 min', price: '$55+' },
+//       { name: 'Makeup Application', duration: '60 min', price: '$85+' }
+//     ]
+//   };
+
+//   return (
+//     <section
+//       id="services"
+//       className="w-screen min-h-screen bg-white py-20"
+//     >
+//       {/* FULL WIDTH CONTAINER */}
+//       <div className="w-full px-6 md:px-16 lg:px-24">
+
+//         {/* Section Header */}
+//         <div className="text-center mb-16">
+//           <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-4">
+//             Our Services
+//           </h2>
+//           <div className="w-20 h-1 bg-primary mx-auto"></div>
+//         </div>
+
+//         {/* Service Cards */}
+//         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+//           {/* GENTS */}
+//           <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 h-[600px]">
+//             <div
+//               className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700"
+//               style={{
+//                 backgroundImage: 'url(/images/services/gents-service.jpg)',
+//                 backgroundPosition: 'center 30%',
+//               }}
+//             >
+//               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+//             </div>
+
+//             <div className="relative h-full flex flex-col justify-end p-8 text-white">
+//               <h3 className="text-5xl md:text-6xl font-serif font-bold mb-6">
+//                 GENTS
+//               </h3>
+
+//               <ul className="space-y-3 mb-8">
+//                 {services.gents.map((service, index) => (
+//                   <li
+//                     key={index}
+//                     className="flex justify-between items-center py-2 border-b border-white/20"
+//                   >
+//                     <span>{service.name}</span>
+//                     <span className="text-sm bg-white/20 px-3 py-1 rounded-full">
+//                       {service.price}
+//                     </span>
+//                   </li>
+//                 ))}
+//               </ul>
+
+//               <Link
+//                 to="/appointment?service=gents"
+//                 className="bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition w-full text-center"
+//               >
+//                 Book Now
+//               </Link>
+//             </div>
+//           </div>
+
+//           {/* LADIES */}
+//           <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 h-[600px]">
+//             <div
+//               className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700"
+//               style={{
+//                 backgroundImage: 'url(/images/services/ladies-service.jpg)',
+//                 backgroundPosition: 'center 30%',
+//               }}
+//             >
+//               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+//             </div>
+
+//             <div className="relative h-full flex flex-col justify-end p-8 text-white">
+//               <h3 className="text-5xl md:text-6xl font-serif font-bold mb-6">
+//                 LADIES
+//               </h3>
+
+//               <ul className="space-y-3 mb-8">
+//                 {services.ladies.map((service, index) => (
+//                   <li
+//                     key={index}
+//                     className="flex justify-between items-center py-2 border-b border-white/20"
+//                   >
+//                     <span>{service.name}</span>
+//                     <span className="text-sm bg-white/20 px-3 py-1 rounded-full">
+//                       {service.price}
+//                     </span>
+//                   </li>
+//                 ))}
+//               </ul>
+
+//               <Link
+//                 to="/appointment?service=ladies"
+//                 className="bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition w-full text-center"
+//               >
+//                 Book Now
+//               </Link>
+//             </div>
+//           </div>
+
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default Services;
+
+
+
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -420,47 +551,50 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="w-screen min-h-screen bg-white py-20"
+      className="w-screen min-h-screen bg-white py-24"
     >
-      {/* FULL WIDTH CONTAINER */}
+      {/* FULL WIDTH */}
       <div className="w-full px-6 md:px-16 lg:px-24">
 
-        {/* Section Header */}
-        <div className="text-center mb-16">
+        {/* HEADER */}
+        <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-4">
             Our Services
           </h2>
-          <div className="w-20 h-1 bg-primary mx-auto"></div>
+          <div className="w-24 h-1 bg-black mx-auto"></div>
         </div>
 
-        {/* Service Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        {/* CARDS */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14">
 
-          {/* GENTS */}
-          <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 h-[600px]">
+          {/* ================= GENTS ================= */}
+          <div className="relative rounded-3xl overflow-hidden bg-black text-white shadow-xl hover:shadow-2xl transition duration-500">
+
+            {/* Background image overlay */}
             <div
-              className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700"
+              className="absolute inset-0 opacity-25 bg-cover bg-center"
               style={{
-                backgroundImage: 'url(/images/services/gents-service.jpg)',
-                backgroundPosition: 'center 30%',
+                backgroundImage: "url('/images/services/gents-service.jpg')",
               }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-            </div>
+            ></div>
 
-            <div className="relative h-full flex flex-col justify-end p-8 text-white">
-              <h3 className="text-5xl md:text-6xl font-serif font-bold mb-6">
+            <div className="relative p-10 md:p-14">
+
+              <h3 className="text-5xl md:text-6xl font-serif font-bold mb-10 tracking-wide">
                 GENTS
               </h3>
 
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-4 mb-10">
                 {services.gents.map((service, index) => (
                   <li
                     key={index}
-                    className="flex justify-between items-center py-2 border-b border-white/20"
+                    className="flex justify-between items-center border-b border-white/20 pb-3"
                   >
-                    <span>{service.name}</span>
-                    <span className="text-sm bg-white/20 px-3 py-1 rounded-full">
+                    <span className="text-lg tracking-wide">
+                      {service.name}
+                    </span>
+
+                    <span className="text-sm bg-white/10 px-4 py-1 rounded-full">
                       {service.price}
                     </span>
                   </li>
@@ -469,38 +603,42 @@ const Services = () => {
 
               <Link
                 to="/appointment?service=gents"
-                className="bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition w-full text-center"
+                className="inline-block w-full text-center bg-white text-black py-4 rounded-full font-semibold hover:bg-gray-200 transition"
               >
-                Book Now
+                Book Appointment
               </Link>
+
             </div>
           </div>
 
-          {/* LADIES */}
-          <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 h-[600px]">
-            <div
-              className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700"
-              style={{
-                backgroundImage: 'url(/images/services/ladies-service.jpg)',
-                backgroundPosition: 'center 30%',
-              }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-            </div>
+          {/* ================= LADIES ================= */}
+          <div className="relative rounded-3xl overflow-hidden bg-black text-white shadow-xl hover:shadow-2xl transition duration-500">
 
-            <div className="relative h-full flex flex-col justify-end p-8 text-white">
-              <h3 className="text-5xl md:text-6xl font-serif font-bold mb-6">
+            {/* Background image overlay */}
+            <div
+              className="absolute inset-0 opacity-25 bg-cover bg-center"
+              style={{
+                backgroundImage: "url('/images/services/ladies-service.jpg')",
+              }}
+            ></div>
+
+            <div className="relative p-10 md:p-14">
+
+              <h3 className="text-5xl md:text-6xl font-serif font-bold mb-10 tracking-wide">
                 LADIES
               </h3>
 
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-4 mb-10">
                 {services.ladies.map((service, index) => (
                   <li
                     key={index}
-                    className="flex justify-between items-center py-2 border-b border-white/20"
+                    className="flex justify-between items-center border-b border-white/20 pb-3"
                   >
-                    <span>{service.name}</span>
-                    <span className="text-sm bg-white/20 px-3 py-1 rounded-full">
+                    <span className="text-lg tracking-wide">
+                      {service.name}
+                    </span>
+
+                    <span className="text-sm bg-white/10 px-4 py-1 rounded-full">
                       {service.price}
                     </span>
                   </li>
@@ -509,10 +647,11 @@ const Services = () => {
 
               <Link
                 to="/appointment?service=ladies"
-                className="bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition w-full text-center"
+                className="inline-block w-full text-center bg-white text-black py-4 rounded-full font-semibold hover:bg-gray-200 transition"
               >
-                Book Now
+                Book Appointment
               </Link>
+
             </div>
           </div>
 
